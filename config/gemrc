@@ -1,0 +1,4 @@
+gem: --no-document
+
+# Print backtrace when RubyGems encounters an error
+:backtrace: true

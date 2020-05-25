@@ -1,0 +1,22 @@
+[alias]
+  st = status
+  co = checkout
+  ps = push
+  pl = pull
+  d  = diff
+  cm = commit -m
+  dc = diff --cached
+  rh = reset HEAD
+  b  = branch
+  cp = cherry-pick
+  sh = show HEAD
+  sho = show
+[color]
+  ui = true
+[user]
+  name = Glauco Custódio
+  email = glauco.custodio@gmail.com
+[pull]
+  rebase = true # avoid: git pull --rebase, just: git pull
+[core]
+  editor = /usr/bin/vim

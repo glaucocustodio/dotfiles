@@ -1,0 +1,4 @@
+alias be="bundle exec"
+alias ber="bundle exec rspec"
+alias c="bin/rails c"
+alias s="bin/rails s"
