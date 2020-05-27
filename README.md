@@ -23,4 +23,5 @@ script/setup
 
 # Acknowledgment
 
-https://github.com/tegon/dotfiles
+- https://github.com/tegon/dotfiles
+- https://github.com/mathiasbynens/dotfiles
