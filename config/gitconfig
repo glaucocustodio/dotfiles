@@ -5,6 +5,7 @@
   pl = pull
   d  = diff
   cm = commit -m
+  cma = commit --amend -m
   dc = diff --cached
   rh = reset HEAD
   b  = branch
