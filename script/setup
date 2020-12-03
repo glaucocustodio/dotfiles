@@ -27,6 +27,9 @@ for file in $config_files; do
   ln -s $file ~/.$config
 done
 
+mkdir -p ~/.config/pgcli
+ln -s ~/.pgcli ~/.config/pgcli/config
+
 source ~/.macos
 
 echo "Done :)"

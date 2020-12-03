@@ -32,6 +32,7 @@ script/setup
 
 ## macOS only
 
+- https://github.com/dbcli/pgcli: pgcli better than psql (brew install pgcli)
 - https://github.com/Lord-Kamina/SwiftDefaultApps: set default app
 - https://github.com/ArtemGordinsky/Spotifree: spotify ad muter
 - https://apps.apple.com/us/app/brightness-slider/id456624497?mt=12: external monitor brightness control
