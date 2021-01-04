@@ -13,6 +13,8 @@ source $ZSH/oh-my-zsh.sh
 # load aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
+[[ -f ~/.private ]] && source ~/.private
+
 # Set default locale for VIM
 export LC_ALL=en_US.UTF-8
 
