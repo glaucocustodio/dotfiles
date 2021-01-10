@@ -32,8 +32,9 @@ script/setup
 
 ## macOS only
 
+- https://github.com/moretension/duti: to set default apps via cli (brew install duti)
 - https://github.com/dbcli/pgcli: pgcli better than psql (brew install pgcli)
-- https://github.com/Lord-Kamina/SwiftDefaultApps: set default app
+- https://github.com/Lord-Kamina/SwiftDefaultApps: to set default app
 - https://github.com/ArtemGordinsky/Spotifree: spotify ad muter
 - https://apps.apple.com/us/app/brightness-slider/id456624497?mt=12: external monitor brightness control
 - https://apps.apple.com/us/app/record-it-screen-recorder/id1339001002?mt=12: screen recorder
