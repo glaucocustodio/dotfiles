@@ -178,7 +178,18 @@ output.odd-row = ""
 output.even-row = ""
 
 # Named queries are queries you can execute by name.
+# \n - list all named queries.
+# \n <name> - Invoke a named query by its name.
+# \ns <name> <query> - Save a new named query called 'name'.
+# \nd <name> - Delete an existing named query by its name.
+#
+# https://www.pgcli.com/named_queries.md
+#
+# ex: \n kill_connections db_name
+#
 [named queries]
+all="select * from $1 limit 1000"
+kill_connections="SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE pid <> pg_backend_pid() AND datname = '$1';"
 
 # DSN to call by -D option
 [alias_dsn]
