@@ -35,7 +35,11 @@ duti -s com.sublimetext.3 .md all
 duti -s com.sublimetext.3 .txt all
 duti -s com.sublimetext.3 .py all
 duti -s com.sublimetext.3 .sql all
+duti -s com.sublimetext.3 public.json all
 duti -s com.sublimetext.3 public.plain-text all
 duti -s com.sublimetext.3 public.text all
 duti -s com.sublimetext.3 public.xml all
+duti -s com.sublimetext.3 public.item all
 duti -s com.sublimetext.3 public.data all
+duti -s com.sublimetext.3 public.content all
+duti -s com.sublimetext.3 public.source-code all
