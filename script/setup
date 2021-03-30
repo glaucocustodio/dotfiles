@@ -32,4 +32,6 @@ ln -s ~/.pgcli ~/.config/pgcli/config
 
 source ~/.macos
 
+echo "You might want to install: asdf, duti, pgcli.. Check README."
 echo "Done :)"
+

@@ -9,3 +9,11 @@ alias cdp="cd ~/Projects"
 alias r="make run"
 alias c="make console"
 alias mt="make test"
+# kill all ruby processes
+alias killruby='pkill -f ruby'
+
+# macOs 10.11+
+alias flushdns='sudo killall -HUP mDNSResponder'
+
+# search files with fzf (you need to have it installed), then open with the editor
+# e **<Tab>

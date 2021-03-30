@@ -23,3 +23,15 @@
   editor = /usr/bin/vim
   # https://tekin.co.uk/2020/10/better-git-diff-output-for-ruby-python-elixir-and-more
   attributesFile = ~/.gitattributes
+  # enable mouse scroll on git diff
+	pager = less -+$LESS -RS
+# not in use
+# [color "diff-highlight"]
+#   oldNormal="red bold"
+#   # number after bold is color, check: https://en.wikipedia.org/wiki/ANSI_escape_code#8-bit
+#   oldHighlight="red bold 52"
+#   newNormal="green bold 70"
+#   newHighlight="green bold 40"
+# [diff-so-fancy]
+# 	markEmptyLines = false
+#   stripLeadingSymbols = false

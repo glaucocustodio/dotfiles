@@ -13,6 +13,8 @@ source $ZSH/oh-my-zsh.sh
 # load aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
+[[ -f ~/.functions ]] && source ~/.functions
+
 [[ -f ~/.private ]] && source ~/.private
 
 # Set default locale for VIM
@@ -23,3 +25,5 @@ export BUNDLER_EDITOR=subl
 
 # from zsh-autosuggestions
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=10"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
