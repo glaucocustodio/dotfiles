@@ -1,2 +1,9 @@
-# ports_in_use "tcp:3000"
-ports_in_use() { lsof -i "$@" }
+# ex: using_port tcp:3000
+#
+using_port() { lsof -i $@ }
+
+# ex: kill_all_in_port tcp:3000
+#
+# source: https://til.hashrocket.com/posts/e4c8c665a8-find-and-kill-all-processes-listening-on-a-port
+#
+kill_all_in_port() { lsof -ti $@ | xargs kill -9 }
