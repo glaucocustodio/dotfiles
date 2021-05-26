@@ -1,10 +1,25 @@
 # to find bundler id of an app, run:
+#
 # $ osascript -e 'id of app "Sublime Text"
-# > com.sublimetext.3
+#
+# > com.sublimetext.4
 
-# to find the UTI, run and check kMDItemContentType:
+# to find the UTI of a file, run and check kMDItemContentType:
+#
 # $ mdls foo.txt
+#
 # > kMDItemContentType = "public.plain-text"
+
+# to find the default app for a file:
+#
+# $ duti -x TableRow.jsx
+#
+# > Visual Studio Code.app
+# > /Applications/Visual Studio Code.app
+# > com.microsoft.VSCode
+
+# ALERT: duti doesn't seem to deal with dynamic UTIs (ex: "dyn.ah62d4rv4ge80y652"),
+# see https://github.com/moretension/duti/issues/9
 
 duti -s org.videolan.vlc .mp4 all
 duti -s org.videolan.vlc .webm all
@@ -24,22 +39,22 @@ duti -s org.videolan.vlc .mp2 all
 duti -s org.videolan.vlc .mpe all
 duti -s org.videolan.vlc .m4v all
 
-duti -s com.sublimetext.3 .mod all
-duti -s com.sublimetext.3 .dat all
-duti -s com.sublimetext.3 .run all
-duti -s com.sublimetext.3 .tex all
-duti -s com.sublimetext.3 .html all
-duti -s com.sublimetext.3 .json all
-duti -s com.sublimetext.3 .php all
-duti -s com.sublimetext.3 .md all
-duti -s com.sublimetext.3 .txt all
-duti -s com.sublimetext.3 .py all
-duti -s com.sublimetext.3 .sql all
-duti -s com.sublimetext.3 public.json all
-duti -s com.sublimetext.3 public.plain-text all
-duti -s com.sublimetext.3 public.text all
-duti -s com.sublimetext.3 public.xml all
-duti -s com.sublimetext.3 public.item all
-duti -s com.sublimetext.3 public.data all
-duti -s com.sublimetext.3 public.content all
-duti -s com.sublimetext.3 public.source-code all
+duti -s com.sublimetext.4 .mod all
+duti -s com.sublimetext.4 .dat all
+duti -s com.sublimetext.4 .run all
+duti -s com.sublimetext.4 .tex all
+duti -s com.sublimetext.4 .html all
+duti -s com.sublimetext.4 .json all
+duti -s com.sublimetext.4 .php all
+duti -s com.sublimetext.4 .md all
+duti -s com.sublimetext.4 .txt all
+duti -s com.sublimetext.4 .py all
+duti -s com.sublimetext.4 .sql all
+duti -s com.sublimetext.4 public.json all
+duti -s com.sublimetext.4 public.plain-text all
+duti -s com.sublimetext.4 public.text all
+duti -s com.sublimetext.4 public.xml all
+duti -s com.sublimetext.4 public.item all
+duti -s com.sublimetext.4 public.data all
+duti -s com.sublimetext.4 public.content all
+duti -s com.sublimetext.4 public.source-code all
