@@ -9,6 +9,7 @@ alias cdp="cd ~/Projects"
 alias r="make run"
 alias c="make console"
 alias mt="make test"
+alias cdsp="cd \"$HOME/Library/Application Support/Sublime Text/Packages/User\""
 # kill all ruby processes
 alias killruby='pkill -f ruby'
 
