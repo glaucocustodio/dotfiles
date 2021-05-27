@@ -56,4 +56,7 @@ puts %{
   $ Model.create: show definition of #create method
   ? Model.create: show doc of #create method
   edit -c       : edit current line (need to save and close the file in editor to return)
+  _             : return last output
+
+
 }
