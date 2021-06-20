@@ -11,7 +11,7 @@ alias c="make console"
 alias mt="make test"
 alias cdsp="cd \"$HOME/Library/Application Support/Sublime Text/Packages/User\""
 # kill all ruby processes
-alias killruby='pkill -f ruby'
+alias killruby='pkill -9 -f ruby'
 
 # macOs 10.11+
 alias flushdns='sudo killall -HUP mDNSResponder'
