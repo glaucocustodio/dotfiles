@@ -19,6 +19,9 @@
   email = glauco.custodio@gmail.com
 [pull]
   rebase = true # avoid: git pull --rebase, just: git pull
+[branch]
+  # recent commited first
+  sort = -committerdate
 [core]
   editor = /usr/bin/vim
   # https://tekin.co.uk/2020/10/better-git-diff-output-for-ruby-python-elixir-and-more
