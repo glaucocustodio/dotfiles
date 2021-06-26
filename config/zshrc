@@ -33,3 +33,22 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=10"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# enable file preview when searching files with fzf, need bat installed to have colored output
+# set following binds while fzf is open:
+#
+# - ctrl+e: open selected file with sublime text
+# - ctrl+y: copy selected file path
+#
+# inspiration: https://stackoverflow.com/questions/64753153/cant-preview-directory-using-fzf
+#
+export FZF_DEFAULT_OPTS='
+  --bind "ctrl-y:execute-silent(echo {+} | pbcopy)"
+  --bind "ctrl-e:execute(echo {+} | xargs -o subl)"
+  --preview "([[ -f {} ]] && bat --style=numbers --color=always --line-range :500 {})"
+'
+
+echo "
+  ALIASES
+  f: search files with fzf (use ctrl+e to open selected file with sublime text)
+"

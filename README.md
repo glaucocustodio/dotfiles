@@ -27,7 +27,7 @@ script/setup
 
 - https://github.com/asdf-vm/asdf: programming language version manager
 - https://github.com/federico-terzi/espanso: text expander
-- https://github.com/sharkdp/bat: cat-like command, but butter
+- https://github.com/sharkdp/bat: cat-like command, but better
 - https://github.com/tldr-pages/tldr: man-like command, but better
 - https://github.com/ggreer/the_silver_searcher: a fast command line code-searching tool (search in file content)
 - https://github.com/junegunn/fzf: command-line fuzzy finder (search in file name)
