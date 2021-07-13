@@ -45,6 +45,8 @@ script/setup
 
 - https://github.com/ibraheemdev/modern-unix
 
+You might also want to add Sublime Merge to $PATH: `ln -s "/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge" /usr/local/bin/merge`
+
 # Acknowledgment
 
 - https://github.com/tegon/dotfiles
