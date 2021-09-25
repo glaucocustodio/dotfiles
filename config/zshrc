@@ -54,7 +54,34 @@ export FZF_DEFAULT_OPTS='
   --preview "([[ -f {} ]] && bat --style=numbers --color=always --line-range :500 {})"
 '
 
+# display weather (short version)
+cli_short
+
+BOLD='\033[1m'
+NONE='\033[00m'
+GREEN='\033[01;32m'
+
 echo "
-  ALIASES
-  f: search files with fzf (use ctrl+e to open selected file with sublime text)
+  ${GREEN}ALIASES${NONE}
+
+  ${BOLD}ag:${NONE} search file content (ignore files on .gitignore)
+  ${BOLD}b:${NONE} bundle install -j$(nproc)
+  ${BOLD}cal:${NONE} calendar
+  ${BOLD}cli:${NONE} weather
+  ${BOLD}e:${NONE} editor
+  ${BOLD}f:${NONE} search files with fzf (use ctrl+e to open selected file with sublime text)
+  ${BOLD}ff:${NONE} switch to firefox
+  ${BOLD}flushdns:${NONE} flush dns
+  ${BOLD}gl:${NONE} open google on firefox
+  ${BOLD}gm:${NONE} open gmail on brave
+  ${BOLD}imgcat:${NONE} display image (ex: ${BOLD}imgcat foo.jpg${NONE})
+  ${BOLD}using_port:${NONE} show processes using the given port. Ex: ${BOLD}using_port tcp:3000${NONE}
+  ${BOLD}kill_all_in_port:${NONE} kill all processes using the given port. Ex: ${BOLD}kill_all_in_port tcp:3000${NONE}
+  ${BOLD}killruby:${NONE} kill all ruby processes
+  ${BOLD}pc:${NONE} pgcli
+  ${BOLD}tw:${NONE} open twitter on brave
+  ${BOLD}yt:${NONE} open youtube on brave
+
 "
+
+

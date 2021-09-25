@@ -7,3 +7,22 @@ using_port() { lsof -i $@ }
 # source: https://til.hashrocket.com/posts/e4c8c665a8-find-and-kill-all-processes-listening-on-a-port
 #
 kill_all_in_port() { lsof -ti $@ | xargs kill -9 }
+
+# remove gf alias defined by git plugin
+unalias gf
+
+function gf() {
+  if [ $# -eq 0 ]; then
+    ff https://gurufocus.com
+  else
+    ff https://gurufocus.com/stock/$1/summary
+  fi
+}
+
+function br() {
+  if [ $# -eq 0 ]; then
+    ff https://bullrun.com.br
+  else
+    ff https://bullrun.com.br/acoes/$1
+  fi
+}
