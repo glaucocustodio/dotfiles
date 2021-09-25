@@ -16,6 +16,47 @@ defaults write com.googlecode.iterm2 "LoadPrefsFromCustomFolder" -bool true
 # General UI/UX                                                               #
 ###############################################################################
 
+# ========== Apprerance ==========
+# - Light
+# defaults delete .GlobalPreferences AppleInterfaceStyleSwitchesAutomatically > /dev/null 2>&1
+# defaults delete .GlobalPreferences AppleInterfaceStyle > /dev/null 2>&1
+# - Dark
+defaults delete .GlobalPreferences AppleInterfaceStyleSwitchesAutomatically > /dev/null 2>&1
+defaults write .GlobalPreferences AppleInterfaceStyle -string "Dark"
+# - Auto
+# defaults write .GlobalPreferences AppleInterfaceStyleSwitchesAutomatically -bool true
+
+# ========== Show Battery status in menu bar ==========
+# - Checked
+defaults write com.apple.controlcenter "NSStatusItem Visible Battery" -bool true
+defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist Battery -int 18
+# - Unchecked
+# defaults write com.apple.controlcenter "NSStatusItem Visible Battery" -bool false
+# defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist Battery -int 24
+
+# ========== Show Battery percentage in menu bar ==========
+# - Show
+defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist BatteryShowPercentage -bool true
+# - Hide
+# defaults write ~/Library/Preferences/ByHost/com.apple.controlcenter.plist BatteryShowPercentage -bool false
+
+NPLIST="/private/var/root/Library/Preferences/com.apple.CoreBrightness.plist"
+
+# ========== Turn keyboard backlight off after ~~~ of inactivity ==========
+# @int:second
+sudo /usr/libexec/PlistBuddy -c "Set :KeyboardBacklight:KeyboardBacklightIdleDimTime 0" ${NPLIST}
+
+# ========== Use a 24-hour clock ==========
+# - Checked
+defaults write com.apple.menuextra.clock Show24Hour -bool true
+# - Unchecked
+# defaults write com.apple.menuextra.clock Show24Hour -bool false
+
+# ========== Show date (In BigSur, time always appears) ==========
+# - Checked
+defaults write com.apple.menuextra.clock ShowDayOfMonth -bool true
+# - Unchecked
+
 # Disable smart quotes to save yourself from pesky syntax errors
 # if the command doesn't work check:
 # https://til.marcuse.info/macos/disable-smart-quotes-in-slack.html
@@ -68,11 +109,45 @@ defaults write com.apple.finder ShowPathbar -bool true
 # Four-letter codes for the other view modes: `icnv`, `clmv`, `glyv`
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
+# ========== New Finder windows show ==========
+defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Projects"
+
+# ========== Open folders in tabs instead of new windows (only when you press command and click on a folder) ==========
+# - Checked
+defaults write com.apple.finder FinderSpawnTab -bool true
+# - Unchecked
+# defaults write com.apple.finder FinderSpawnTab -bool false
+
+# ========== Show warning before changing an extension ==========
+# - Checked
+# defaults write com.apple.finder FXEnableExtensionChangeWarning -bool true
+# - Unchecked
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+# ========== Text Size ==========
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:textSize 14" "${HOME}"/Library/Preferences/com.apple.finder.plist
+
 ###############################################################################
 # Dock, Dashboard, and hot corners                                            #
 ###############################################################################
 
 # Set the icon size of Dock items to 64 pixels
 defaults write com.apple.dock tilesize -int 64
+
+###############################################################################
+# Siri                                                                        #
+###############################################################################
+
+# ========== Enable Ask Siri ==========
+# - Checked
+# defaults write com.apple.assistant.support.plist Assistant Enabled -bool true
+# - Unchecked
+defaults write com.apple.assistant.support.plist "Assistant Enabled" -bool false
+
+# ========== Show Siri in menu bar ==========
+# - Checked
+# defaults write com.apple.Siri StatusMenuVisible -bool true
+# - Unchecked
+defaults write com.apple.Siri StatusMenuVisible -bool false
 
 echo "Please restart your macOS so all changes can take effect."
