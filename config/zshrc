@@ -69,14 +69,16 @@ echo "
 
   ${BOLD}ag:${NONE} search file content (ignore files on .gitignore)
   ${BOLD}b:${NONE} bundle install -j$(nproc)
+  ${BOLD}br:${NONE} open bull run (ex: ${BOLD}br itub3${NONE})
   ${BOLD}cal:${NONE} calendar
   ${BOLD}cli:${NONE} weather
   ${BOLD}e:${NONE} editor
   ${BOLD}f:${NONE} search files with fzf (use ctrl+e to open selected file with sublime text)
   ${BOLD}ff:${NONE} switch to firefox
   ${BOLD}flushdns:${NONE} flush dns
+  ${BOLD}gf:${NONE} open guru focus (ex: ${BOLD}gf meli${NONE})
+  ${BOLD}yf:${NONE} open yahoo finance (ex: ${BOLD}yf baba${NONE})
   ${BOLD}gl:${NONE} open google on firefox
-  ${BOLD}gm:${NONE} open gmail on brave
   ${BOLD}imgcat:${NONE} display image (ex: ${BOLD}imgcat foo.jpg${NONE})
   ${BOLD}using_port:${NONE} show processes using the given port. Ex: ${BOLD}using_port tcp:3000${NONE}
   ${BOLD}kill_all_in_port:${NONE} kill all processes using the given port. Ex: ${BOLD}kill_all_in_port tcp:3000${NONE}
@@ -84,5 +86,4 @@ echo "
   ${BOLD}pc:${NONE} pgcli
   ${BOLD}tw:${NONE} open twitter on brave
   ${BOLD}yt:${NONE} open youtube on brave
-
 "

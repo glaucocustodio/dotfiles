@@ -22,7 +22,6 @@ if [[ $OSTYPE == darwin* ]]; then
   alias brave="open -a /Applications/Brave\ Browser.app"
   alias ff="open -a /Applications/Firefox\ Developer\ Edition.app"
   alias gl="ff https://google.com"
-  alias gm="brave https://gmail.com"
   alias tw="brave https://twitter.com"
   alias yt="brave https://youtube.com"
   # macOs 10.11+
