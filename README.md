@@ -27,6 +27,7 @@ script/setup
 
 - https://github.com/asdf-vm/asdf: programming language version manager
 - https://github.com/federico-terzi/espanso: text expander
+- https://github.com/chmln/sd: like sed / awk, but friendlier
 - https://github.com/eddieantonio/imgcat: display image on terminal
 - https://github.com/sharkdp/bat: cat-like command, but better
 - https://github.com/tldr-pages/tldr: man-like command, but better
