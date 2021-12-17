@@ -5,6 +5,7 @@ ZSH_THEME="robbyrussell"
 
 plugins=(
   git
+  fzf-tab
   zsh-autosuggestions
 )
 
@@ -54,8 +55,12 @@ export FZF_DEFAULT_OPTS='
   --preview "([[ -f {} ]] && bat --style=numbers --color=always --line-range :500 {})"
 '
 
+# load zsh-autopair
+source ~/.zsh-autopair/autopair.zsh
+autopair-init
+
 # trigger fzf when pressing arrow up
-bindkey "${key[Up]}" fzf-history-widget
+# bindkey "${key[Up]}" fzf-history-widget
 
 # display weather (short version)
 cli_short

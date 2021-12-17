@@ -32,7 +32,9 @@ script/setup
 - https://github.com/sharkdp/bat: cat-like command, but better
 - https://github.com/tldr-pages/tldr: man-like command, but better
 - https://github.com/ggreer/the_silver_searcher: a fast command line code-searching tool (search in file content)
+- https://github.com/hlissner/zsh-autopair: auto close quotes and more (`", ', (, [...`)
 - https://github.com/junegunn/fzf: command-line fuzzy finder (search in file name)
+- https://github.com/Aloxaf/fzf-tab: replace zsh's default completion selection menu with fzf
 
 ## macOS only
 
