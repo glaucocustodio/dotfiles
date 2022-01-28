@@ -44,6 +44,7 @@ script/setup
 - https://github.com/ArtemGordinsky/Spotifree: spotify ad muter
 - https://apps.apple.com/us/app/brightness-slider/id456624497?mt=12: external monitor brightness control
 - https://apps.apple.com/us/app/record-it-screen-recorder/id1339001002?mt=12: screen recorder
+- https://maccy.app/: clipboard manager
 
 ## Useful
 
