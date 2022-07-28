@@ -150,4 +150,17 @@ defaults write com.apple.assistant.support.plist "Assistant Enabled" -bool false
 # - Unchecked
 defaults write com.apple.Siri StatusMenuVisible -bool false
 
+# ========== Others ==========
+
+# Sublime Text 3
+# defaults write com.apple.LaunchServices/com.apple.launchservices.secure LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.3;}'
+
+# VS Code
+# defaults write com.apple.LaunchServices/com.apple.launchservices.secure LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.microsoft.VSCode;}'
+
+# make Sublime Text 4 default text editor of plain text files
+# source: https://gomakethings.com/changing-the-default-text-editor-on-macos/
+#
+defaults write com.apple.LaunchServices/com.apple.launchservices.secure LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.4;}'
+
 echo "Please restart your macOS so all changes can take effect."
