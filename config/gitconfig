@@ -12,6 +12,7 @@
   cp = cherry-pick
   sh = show HEAD
   sho = show
+  force = push --force-with-lease
 [color]
   ui = true
 [user]

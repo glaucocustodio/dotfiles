@@ -94,7 +94,7 @@ timing = True
 # ascii, double, github, orgtbl, rst, mediawiki, html, latex, latex_booktabs,
 # textile, moinmoin, jira, vertical, tsv, csv.
 # Recommended: psql, fancy_grid and grid.
-table_format = psql
+table_format = fancy_grid
 
 # Syntax Style. Possible values: manni, igor, xcode, vim, autumn, vs, rrt,
 # native, perldoc, borland, tango, emacs, friendly, monokai, paraiso-dark,
@@ -114,7 +114,7 @@ vi = False
 on_error = STOP
 
 # Set threshold for row limit. Use 0 to disable limiting.
-row_limit = 1000
+row_limit = 20
 
 # Skip intro on startup and goodbye on exit
 less_chatty = False

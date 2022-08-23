@@ -24,3 +24,7 @@
 *.rs    diff=rust
 *.lisp  diff=lisp
 *.el    diff=lisp
+
+# allow diff of gpg and asc files
+*.gpg filter=gpg diff=gpg
+*.asc filter=gpg diff=gpg
