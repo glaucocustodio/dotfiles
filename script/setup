@@ -29,6 +29,10 @@ for file in $config_files; do
   ln -s $file ~/.$config
 done
 
+rm ~/.nvim
+mkdir -p ~/.config/nvim
+ln -s ~/dotfiles/config/nvim/init.vim ~/.config/nvim
+
 mkdir -p ~/.config/pgcli
 ln -s ~/.pgcli ~/.config/pgcli/config
 

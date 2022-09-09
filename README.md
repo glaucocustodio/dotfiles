@@ -49,6 +49,7 @@ script/setup
 ## Useful
 
 - https://github.com/ibraheemdev/modern-unix
+- https://www.manualdocodigo.com.br/vim-basico/: set up of Vim/NeoVim
 
 You might also want to add Sublime Merge to $PATH: `ln -s "/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge" /usr/local/bin/merge`
 

@@ -16,6 +16,7 @@ alias c="make console"
 alias mt="make test"
 alias cdsp="cd \"$HOME/Library/Application Support/Sublime Text/Packages/User\""
 alias pc="pgcli"
+alias lsl="ls -lahtr"
 # kill all ruby processes
 alias killruby='pkill -9 -f ruby'
 
