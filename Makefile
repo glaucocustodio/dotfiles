@@ -4,3 +4,7 @@
 link_file:
 	rm ~/.$(file)
 	ln -s ~/dotfiles/config/$(file) ~/.$(file)
+
+link_nvim_config:
+	rm ~/.config/nvim/init.vim
+	ln -s ~/dotfiles/config/nvim/init.vim ~/.config/nvim

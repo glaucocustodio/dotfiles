@@ -17,6 +17,8 @@ alias mt="make test"
 alias cdsp="cd \"$HOME/Library/Application Support/Sublime Text/Packages/User\""
 alias pc="pgcli"
 alias lsl="ls -lahtr"
+alias vim="nvim"
+alias v="nvim"
 # kill all ruby processes
 alias killruby='pkill -9 -f ruby'
 
