@@ -18,6 +18,7 @@ call plug#begin()
 call plug#end()
 
 " Global Sets """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let mapleader = "\<Space>"
 syntax on            " Enable syntax highlight
 set nu               " Enable line numbers
 set tabstop=2        " Show existing tab with 4 spaces width
@@ -53,11 +54,17 @@ let g:airline#extensions#tabline#enabled = 0
 " Find files using Telescope command-line sugar.
 nnoremap ff <cmd>Telescope find_files<cr>
 nnoremap fg <cmd>Telescope live_grep<cr>
-"nnoremap <leader>fb <cmd>Telescope buffers<cr>
-"nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 nnoremap e w
 nnoremap w b
+
+nnoremap bd <cmd>:bd<cr> " close buffer
+
+" nnoremap q :q<CR>  " Easier closing of buffers
+
+au! BufWritePost $NEOVIM_CONFIG_FILE source %
 
 inoremap jj <Esc> " jj to leave insert mode
 
@@ -96,6 +103,16 @@ map pi :PlugInstall<CR>
 lua << EOF
 require("bufferline").setup{}
 EOF
+
+" Use Ctrl + hjkl to resize windows (alt doesn't work on mac+iterm2)
+nnoremap <C-j>    :resize -2<CR>
+nnoremap <C-k>    :resize +2<CR>
+nnoremap <C-h>    :vertical resize -2<CR>
+nnoremap <C-l>    :vertical resize +2<CR>
+
+" Better tabbing (avoid unselecting after first tab)
+vnoremap < <gv
+vnoremap > >gv
 
 " COC config
 "
