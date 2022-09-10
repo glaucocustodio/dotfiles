@@ -16,6 +16,7 @@ call plug#begin()
  Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
  Plug 'ludovicchabant/vim-gutentags'
+ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 " Global Sets """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -54,10 +55,12 @@ filetype indent on        " Load the indent file for the file type, if any
 let g:airline#extensions#tabline#enabled = 0
 
 " Find files using Telescope command-line sugar.
-nnoremap ff <cmd>Telescope find_files<cr>
-nnoremap fg <cmd>Telescope live_grep<cr>
+nnoremap ff <cmd>lua require('telescope.builtin').find_files({ find_command = {'fd', '--type', 'f', '--hidden', '--no-ignore', '--follow', '--color=never', '--exclude=.git', '--exclude=tmp', '--exclude=node_modules', '--exclude', 'public/assets' }})<cr>
+nnoremap ft <cmd>Telescope live_grep<cr>
 nnoremap fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>gc <cmd>Telescope git_commits<cr>
+nnoremap <leader>gs <cmd>Telescope git_status<cr>
 
 vnoremap e w
 nnoremap e w
@@ -103,6 +106,21 @@ map pi :PlugInstall<CR>
 
 lua << EOF
 require("bufferline").setup({})
+EOF
+
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  -- Automatically install missing parsers when entering buffer
+  auto_install = true,
+  highlight = {
+    enable = true,
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = false,
+  },
+}
 EOF
 
 " Use Ctrl + hjkl to resize windows (alt doesn't work on mac+iterm2)
