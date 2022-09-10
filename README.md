@@ -50,6 +50,7 @@ script/setup
 
 - https://github.com/ibraheemdev/modern-unix
 - https://www.manualdocodigo.com.br/vim-basico/: set up of Vim/NeoVim
+- https://tbaggery.com/2011/08/08/effortless-ctags-with-git.html
 
 You might also want to add Sublime Merge to $PATH: `ln -s "/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge" /usr/local/bin/merge`
 
