@@ -64,7 +64,21 @@ lua << EOF
       mappings = {
         ["<cr>"] = "open",
         ["o"] = "open",
-        ["p"] = "toggle_preview"
+        ["p"] = "toggle_preview",
+        ["J"] = function(state)
+          local tree = state.tree
+          local node = tree:get_node()
+          local siblings = tree:get_nodes(node:get_parent_id())
+          local renderer = require('neo-tree.ui.renderer')
+          renderer.focus_node(state, siblings[#siblings]:get_id())
+        end,
+        ["K"] = function(state)
+          local tree = state.tree
+          local node = tree:get_node()
+          local siblings = tree:get_nodes(node:get_parent_id())
+          local renderer = require('neo-tree.ui.renderer')
+          renderer.focus_node(state, siblings[1]:get_id())
+        end
       },
     },
     filesystem = {
@@ -101,6 +115,14 @@ nnoremap w b
 
 nnoremap bd <cmd>:bd<cr> " close buffer
 nnoremap bd! <cmd>:bd!<cr> " close buffer
+
+" Select All
+nnoremap <silent> <C-a> ggVG
+inoremap <silent> <C-a> <Esc>ggVG
+vnoremap <silent> <C-a> <Esc>ggVG
+
+" Turn off highlight of last search and paste mode when hitting Esc
+nnoremap <silent> <Esc> <Esc>:noh<CR>
 
 " nnoremap q :q<CR>  " Easier closing of buffers
 
