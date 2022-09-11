@@ -21,6 +21,7 @@
 --exclude=node_modules/*
 --exclude=*/node_modules/*
 --exclude=log/*
+--exclude=*.sql
 --exclude=\*.min.\*
 --exclude=\*.swp
 --exclude=\*.bak
@@ -32,3 +33,4 @@
 --exclude=\*.cache
 --exclude=\*.dll
 --exclude=\*.pdb
+-f .tags
