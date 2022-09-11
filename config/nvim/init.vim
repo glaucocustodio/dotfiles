@@ -1,5 +1,4 @@
 call plug#begin()
- Plug 'scrooloose/nerdtree'
  Plug 'vim-airline/vim-airline'
  Plug 'sheerun/vim-polyglot'
  Plug 'nvim-lua/plenary.nvim'
@@ -16,7 +15,9 @@ call plug#begin()
  Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
  Plug 'ludovicchabant/vim-gutentags'
+ Plug 'MunifTanjim/nui.nvim'
  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+ Plug 'nvim-neo-tree/neo-tree.nvim'
 call plug#end()
 
 " Global Sets """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -51,6 +52,37 @@ filetype on               " Detect and set the filetype option and trigger the F
 filetype plugin on        " Load the plugin file for the file type, if any
 filetype indent on        " Load the indent file for the file type, if any
 
+
+let g:neo_tree_remove_legacy_commands = 1
+let g:gutentags_ctags_tagfile = '.tags'
+let loaded_netrwPlugin = 1
+
+lua << EOF
+  require("neo-tree").setup({
+    close_if_last_window = false,
+    window = {
+      mappings = {
+        ["<cr>"] = "open",
+        ["o"] = "open",
+        ["p"] = "toggle_preview"
+      },
+    },
+    filesystem = {
+      follow_current_file = true
+    },
+    event_handlers = {
+      {
+         event = "file_opened",
+         handler = function()
+           vim.cmd("Neotree filesystem toggle")
+         end
+      }
+    }
+  })
+EOF
+
+" reminder: `gf` keybinding in normal mode opens file path under cursor
+
 " AirLine """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline#extensions#tabline#enabled = 0
 
@@ -68,6 +100,7 @@ vnoremap w b
 nnoremap w b
 
 nnoremap bd <cmd>:bd<cr> " close buffer
+nnoremap bd! <cmd>:bd!<cr> " close buffer
 
 " nnoremap q :q<CR>  " Easier closing of buffers
 
@@ -75,7 +108,7 @@ au! BufWritePost $NEOVIM_CONFIG_FILE source %
 
 inoremap jj <Esc> " jj to leave insert mode
 
-nmap <C-a> :NERDTreeToggle<CR>
+nmap <leader>s :Neotree filesystem toggle<CR>
 
 " enable fzf within telescope (allow searches with whitespace for instance)
 lua require('telescope').load_extension('fzf')
@@ -91,8 +124,10 @@ colorscheme NeoSolarized
 nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
 nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
 
+" nmap <C-a> :NERDTreeToggle<CR>
+
 " Open nerd tree at the current file or close nerd tree if pressed again (Ctrl+s)
-nnoremap <silent> <expr> <C-s> g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
+" nnoremap <silent> <expr> <C-s> g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
 
 " Copy relative file path (Ctrl+c)
 nmap <C-c> :let @+ = expand("%")<CR>
@@ -123,11 +158,21 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
-" Use Ctrl + hjkl to resize windows (alt doesn't work on mac+iterm2)
+" Use Ctrl + hjkl to resize windows
 nnoremap <C-j>    :resize -2<CR>
 nnoremap <C-k>    :resize +2<CR>
 nnoremap <C-h>    :vertical resize -2<CR>
 nnoremap <C-l>    :vertical resize +2<CR>
+
+" M = Options on Mac+iTerm2, it requires enabling Esc+: go to Preferences > Profiles, select
+" your current profile, go to the 'keys' tab for that profile and change the option
+" that says 'Left ⌥ Key" to Esc+'.
+noremap <M-j> :m+<CR>
+noremap <M-k> :m .-2<CR>
+
+vnoremap <M-j> :m '>+1<CR>gv=gv
+vnoremap <M-k> :m '<-2<CR>gv=gv
+
 
 " Better tabbing (avoid unselecting after first tab)
 vnoremap < <gv
