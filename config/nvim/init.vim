@@ -182,6 +182,7 @@ nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :wri
 nmap <C-c> :let @+ = expand("%")<CR>
 
 nmap <C-q> :q!<CR>
+nmap <C-s> :w<CR>
 
 " Source neovim config file
 map sv :source $NEOVIM_CONFIG_FILE<CR>
