@@ -18,6 +18,7 @@ call plug#begin()
  Plug 'MunifTanjim/nui.nvim'
  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
  Plug 'nvim-neo-tree/neo-tree.nvim'
+ Plug 'tpope/vim-commentary'
 call plug#end()
 
 " Global Sets """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -101,7 +102,7 @@ EOF
 let g:airline#extensions#tabline#enabled = 0
 
 " Find files using Telescope command-line sugar.
-nnoremap ff <cmd>lua require('telescope.builtin').find_files({ find_command = {'fd', '--type', 'f', '--hidden', '--no-ignore', '--follow', '--color=never', '--exclude=.git', '--exclude=tmp', '--exclude=node_modules', '--exclude', 'public/assets' }})<cr>
+nnoremap ff <cmd>lua require('telescope.builtin').find_files({ find_command = {'fd', '--type', 'f', '--hidden', '--no-ignore', '--follow', '--color=never', '--exclude=.git', '--exclude=tmp', '--exclude=node_modules', '--exclude=app/lib/company_details', '--exclude', 'public/assets' }})<cr>
 nnoremap ft <cmd>Telescope live_grep<cr>
 nnoremap fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
@@ -188,6 +189,10 @@ nmap <C-s> :w<CR>
 map sv :source $NEOVIM_CONFIG_FILE<CR>
 
 map pi :PlugInstall<CR>
+
+" mind indentation when navigating to start of the line
+map <Home> ^
+imap <Home> <Esc>^i
 
 lua << EOF
 require("bufferline").setup({})

@@ -112,3 +112,4 @@ export PATH="$HOME/nvim-macos/bin:$PATH"
 export NEOVIM_CONFIG_FILE="~/.config/nvim/init.vim"
 alias cfv="e $NEOVIM_CONFIG_FILE"
 
+export PATH="$HOME/.local/bin/:$PATH"
