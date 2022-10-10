@@ -45,6 +45,8 @@ script/setup
 - https://apps.apple.com/us/app/brightness-slider/id456624497?mt=12: external monitor brightness control
 - https://apps.apple.com/us/app/record-it-screen-recorder/id1339001002?mt=12: screen recorder
 - https://maccy.app/: clipboard manager
+- https://www.mowglii.com/itsycal/: better calendar
+- https://apps.apple.com/us/app/ethernet-status/id1186187538: ethernet cable status indicator
 
 ## Useful
 
