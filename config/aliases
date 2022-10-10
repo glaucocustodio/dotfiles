@@ -9,7 +9,7 @@ alias cat="bat -p --theme=TwoDark --color=always"
 alias cal="cal -A 1 -B 1"
 alias cli="curl --max-time 2 wttr.in/Lisboa\?1F\&lang=pt-br" # `curl wttr.in/:help` to see options
 alias cli_short="curl --max-time 1 wttr.in/Lisboa\?0F\&lang=pt-br" # `curl wttr.in/:help` to see options
-alias cddo="cd ~/dotfiles"
+alias cddo="cd ~/Projects/dotfiles"
 alias cdp="cd ~/Projects"
 alias r="make run"
 alias c="make console"

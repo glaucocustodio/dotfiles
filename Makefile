@@ -3,8 +3,8 @@
 # Usage ex: make link_file file=asdfrc
 link_file:
 	rm ~/.$(file)
-	ln -s ~/dotfiles/config/$(file) ~/.$(file)
+	ln -s ~/Projects/dotfiles/config/$(file) ~/.$(file)
 
 link_nvim_config:
 	rm ~/.config/nvim/init.vim
-	ln -s ~/dotfiles/config/nvim/init.vim ~/.config/nvim
+	ln -s ~/Projects/dotfiles/config/nvim/init.vim ~/.config/nvim

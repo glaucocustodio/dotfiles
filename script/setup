@@ -21,7 +21,7 @@ git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/p
 
 echo "Setup configuration files..."
 
-config_files=~/dotfiles/config/*
+config_files=~/Projects/dotfiles/config/*
 
 for file in $config_files; do
   config=$(basename $file)
@@ -31,7 +31,7 @@ done
 
 rm ~/.nvim
 mkdir -p ~/.config/nvim
-ln -s ~/dotfiles/config/nvim/init.vim ~/.config/nvim
+ln -s ~/Projects/dotfiles/config/nvim/init.vim ~/.config/nvim
 
 mkdir -p ~/.config/pgcli
 ln -s ~/.pgcli ~/.config/pgcli/config

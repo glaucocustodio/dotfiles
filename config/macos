@@ -9,7 +9,7 @@ osascript -e 'tell application "System Preferences" to quit'
 ###############################################################################
 # iTerm                                                                       #
 ###############################################################################
-defaults write com.googlecode.iterm2 "PrefsCustomFolder" -string "~/dotfiles/iterm"
+defaults write com.googlecode.iterm2 "PrefsCustomFolder" -string "~/Projects/dotfiles/iterm"
 defaults write com.googlecode.iterm2 "LoadPrefsFromCustomFolder" -bool true
 
 ###############################################################################
