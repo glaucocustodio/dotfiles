@@ -38,6 +38,7 @@ ln -s ~/.pgcli ~/.config/pgcli/config
 
 source ~/.macos
 
+cp ~/Projects/dotfiles/run_davinci.py ~/Library/Application\ Support/iTerm2/Scripts/run_davinci.py
+
 echo "You might want to install: asdf, duti, pgcli.. Check README."
 echo "Done :)"
-
