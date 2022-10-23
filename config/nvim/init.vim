@@ -102,8 +102,8 @@ EOF
 let g:airline#extensions#tabline#enabled = 0
 
 " Find files using Telescope command-line sugar.
-nnoremap ff <cmd>lua require('telescope.builtin').find_files({ find_command = {'fd', '--type', 'f', '--hidden', '--no-ignore', '--follow', '--color=never', '--exclude=.git', '--exclude=tmp', '--exclude=node_modules', '--exclude=app/lib/company_details', '--exclude', 'public/assets' }})<cr>
-nnoremap ft <cmd>Telescope live_grep<cr>
+nnoremap ff <cmd>lua require('telescope.builtin').find_files({ find_command = {'fd', '--type', 'f', '--hidden', '--no-ignore', '--follow', '--color=never', '--exclude=.git', '--exclude=tmp', '--exclude=node_modules', '--exclude=app/lib/company_details', '--exclude', 'public/assets' }})<cr> " requires fd
+nnoremap ft <cmd>Telescope live_grep<cr> " requires ripgrep
 nnoremap fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>gc <cmd>Telescope git_commits<cr>

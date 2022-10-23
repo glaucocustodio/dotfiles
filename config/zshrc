@@ -83,7 +83,7 @@ GREEN='\033[01;32m'
 echo "
   ${GREEN}ALIASES${NONE}
 
-  ${BOLD}ag:${NONE} search file content (ignore files on .gitignore)
+  ${BOLD}rg:${NONE} search file content (ignore files on .gitignore)
   ${BOLD}b:${NONE} bundle install -j$(nproc)
   ${BOLD}br:${NONE} open bull run (ex: ${BOLD}br itub3${NONE})
   ${BOLD}cal:${NONE} calendar
