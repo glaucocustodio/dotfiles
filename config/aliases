@@ -21,8 +21,9 @@ alias pc="pgcli"
 alias lsl="ls -lahtr"
 alias vim="nvim"
 alias v="nvim"
-# kill all ruby processes
-alias killruby='pkill -9 -f ruby'
+alias flushall-redis="echo flushall | redis-cli"
+# kill all ruby processes, except for solargraph ones (to avoid disturbing LSP)
+alias killruby="pgrep -fl ruby | grep --invert-match solargraph | grep --invert-match grep | awk '{print \$1}' | xargs kill -9"
 
 if [[ $OSTYPE == darwin* ]]; then
   alias brave="open -a /Applications/Brave\ Browser.app"
@@ -36,4 +37,3 @@ fi
 
 # ========== Suffix Alias ==========
 alias -s {png,jpg,jpeg}='imgcat'
-alias -s {rb,py,md,json,js,ru,sql,sh,txt,lock}='e'

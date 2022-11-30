@@ -98,7 +98,8 @@ echo "
   ${BOLD}imgcat:${NONE} display image (ex: ${BOLD}imgcat foo.jpg${NONE})
   ${BOLD}using_port:${NONE} show processes using the given port. Ex: ${BOLD}using_port tcp:3000${NONE}
   ${BOLD}kill_all_in_port:${NONE} kill all processes using the given port. Ex: ${BOLD}kill_all_in_port tcp:3000${NONE}
-  ${BOLD}killruby:${NONE} kill all ruby processes
+  ${BOLD}killruby:${NONE} kill all ruby processes but solargraph
+  ${BOLD}flushall-redis:${NONE} flush all redis storage
   ${BOLD}pc:${NONE} pgcli
   ${BOLD}tw:${NONE} open twitter on brave
   ${BOLD}yt:${NONE} open youtube on brave
