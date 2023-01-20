@@ -73,8 +73,20 @@ autopair-init
 # trigger fzf when pressing arrow up
 # bindkey "${key[Up]}" fzf-history-widget
 
+# NeoVim v0.7 binary must be present on this folder
+# NeoVim installed from brew is v0.5 (outdated), Telescope plugin requires NeoVim min v0.7
+# follow instructions from https://github.com/neovim/neovim/releases/tag/v0.7.2
+# then add to the $PATH
+export PATH="$HOME/nvim-macos/bin:$PATH"
+export NEOVIM_CONFIG_FILE="~/.config/nvim/init.vim"
+alias cfv="e $NEOVIM_CONFIG_FILE"
+
+. $(brew --prefix asdf)/libexec/asdf.sh
+
 # display weather (short version)
 cli_short
+
+fetch_usd_brl_quote
 
 BOLD='\033[1m'
 NONE='\033[00m'
@@ -104,15 +116,3 @@ echo "
   ${BOLD}tw:${NONE} open twitter on brave
   ${BOLD}yt:${NONE} open youtube on brave
 "
-
-export PATH="$HOME/.poetry/bin:$PATH"
-
-# NeoVim v0.7 binary must be present on this folder
-# NeoVim installed from brew is v0.5 (outdated), Telescope plugin requires NeoVim min v0.7
-# follow instructions from https://github.com/neovim/neovim/releases/tag/v0.7.2
-# then add to the $PATH
-export PATH="$HOME/nvim-macos/bin:$PATH"
-export NEOVIM_CONFIG_FILE="~/.config/nvim/init.vim"
-alias cfv="e $NEOVIM_CONFIG_FILE"
-
-. $(brew --prefix asdf)/libexec/asdf.sh

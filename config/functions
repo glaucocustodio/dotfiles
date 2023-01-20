@@ -34,3 +34,9 @@ function br() {
     ff https://bullrun.com.br/acoes/$1
   fi
 }
+
+function fetch_usd_brl_quote() {
+  response=$(curl -s "https://query1.finance.yahoo.com/v8/finance/chart/USDBRL=X")
+  regularMarketPrice=$(echo $response | jq '.chart.result[0].meta.regularMarketPrice')
+  echo "\nUSD/BRL: $regularMarketPrice"
+}
