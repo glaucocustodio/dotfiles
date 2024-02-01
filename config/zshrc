@@ -12,6 +12,7 @@ plugins=(
   git
   # fzf-tab
   zsh-autosuggestions
+  colored-man-pages
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -33,10 +34,10 @@ export LC_ALL=en_US.UTF-8
 #export MAKE="make -j$(nproc)"
 export BUNDLE_JOBS=$(nproc)
 
-export DISABLE_SPRING=1
+export DISABLE_SPRING=true
 
 export EDITOR=vim
-export BUNDLER_EDITOR=subl
+export BUNDLER_EDITOR=code
 # prevent update whenever you run a brew command
 export HOMEBREW_NO_AUTO_UPDATE=1
 
@@ -47,19 +48,24 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 # from zsh-autosuggestions
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=10"
 
+# With the debug gem v1.9.0, which is part of Ruby 3.3,
+# you can configure it to use IRB as its console (by setting RUBY_DEBUG_IRB_CONSOLE=1)
+# instead of rdbg (the default).
+export RUBY_DEBUG_IRB_CONSOLE=1
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # enable file preview when searching files with fzf, need bat installed to have colored output
 # set following binds while fzf is open:
 #
-# - ctrl+e: open selected file with sublime text
+# - ctrl+e: open selected file with vscode
 # - ctrl+y: copy selected file path
 #
 # inspiration: https://stackoverflow.com/questions/64753153/cant-preview-directory-using-fzf
 #
 export FZF_DEFAULT_OPTS='
   --bind "ctrl-y:execute-silent(echo {+} | pbcopy)"
-  --bind "ctrl-e:execute(echo {+} | xargs -o subl)"
+  --bind "ctrl-e:execute(echo {+} | xargs -o code)"
   --preview "([[ -f {} ]] && bat --theme=TwoDark --style=numbers --color=always --line-range :500 {})"
 '
 
@@ -101,7 +107,7 @@ echo "
   ${BOLD}cal:${NONE} calendar
   ${BOLD}cli:${NONE} weather
   ${BOLD}e:${NONE} editor
-  ${BOLD}f:${NONE} search files with fzf (use ctrl+e to open selected file with sublime text)
+  ${BOLD}f:${NONE} search files with fzf (use ctrl+e to open selected file with vscode)
   ${BOLD}ff:${NONE} switch to firefox
   ${BOLD}flushdns:${NONE} flush dns
   ${BOLD}gf:${NONE} open guru focus (ex: ${BOLD}gf meli${NONE})
