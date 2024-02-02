@@ -60,13 +60,21 @@ export RUBY_DEBUG_IRB_CONSOLE=1
 #
 # - ctrl+e: open selected file with vscode
 # - ctrl+y: copy selected file path
+# - image preview requires https://github.com/eddieantonio/imgcat and fzf 0.44 (brew install imgcat)
 #
-# inspiration: https://stackoverflow.com/questions/64753153/cant-preview-directory-using-fzf
+# inspiration: https://stackoverflow.com/questions/64753153/cant-preview-directory-using-fzf,
+# https://github.com/junegunn/fzf/discussions/3609
 #
 export FZF_DEFAULT_OPTS='
   --bind "ctrl-y:execute-silent(echo {+} | pbcopy)"
   --bind "ctrl-e:execute(echo {+} | xargs -o code)"
-  --preview "([[ -f {} ]] && bat --theme=TwoDark --style=numbers --color=always --line-range :500 {})"
+   --preview "
+  if file --mime-type {} | grep -qF image/; then
+    imgcat --depth iterm2 --width $FZF_PREVIEW_COLUMNS --height $FZF_PREVIEW_LINES {}
+  else
+    bat --theme=TwoDark --style=numbers --color=always --line-range :500 {}
+  fi
+  "
 '
 
 # disable preview when searching history (CTRL+R)
