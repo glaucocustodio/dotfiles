@@ -109,24 +109,26 @@ GREEN='\033[01;32m'
 echo "
   ${GREEN}ALIASES${NONE}
 
-  ${BOLD}rg:${NONE} search file content (ignore files on .gitignore)
-  ${BOLD}b:${NONE} bundle install -j$(nproc)
-  ${BOLD}br:${NONE} open bull run (ex: ${BOLD}br itub3${NONE})
-  ${BOLD}cal:${NONE} calendar
-  ${BOLD}cli:${NONE} weather
   ${BOLD}e:${NONE} editor
   ${BOLD}f:${NONE} search files with fzf (use ctrl+e to open selected file with vscode)
-  ${BOLD}ff:${NONE} switch to firefox
+  ${BOLD}b:${NONE} bundle install -j$(nproc)
+  ${BOLD}rg:${NONE} search file content (ignore files on .gitignore)
+  ${BOLD}cal:${NONE} calendar
+  ${BOLD}cli:${NONE} weather
   ${BOLD}flushdns:${NONE} flush dns
-  ${BOLD}gf:${NONE} open guru focus (ex: ${BOLD}gf meli${NONE})
-  ${BOLD}yf:${NONE} open yahoo finance (ex: ${BOLD}yf baba${NONE})
-  ${BOLD}gl:${NONE} open google on firefox
   ${BOLD}imgcat:${NONE} display image (ex: ${BOLD}imgcat foo.jpg${NONE})
   ${BOLD}using_port:${NONE} show processes using the given port. Ex: ${BOLD}using_port tcp:3000${NONE}
   ${BOLD}kill_all_in_port:${NONE} kill all processes using the given port. Ex: ${BOLD}kill_all_in_port tcp:3000${NONE}
   ${BOLD}killruby:${NONE} kill all ruby processes but solargraph
   ${BOLD}flushall-redis:${NONE} flush all redis storage
   ${BOLD}pc:${NONE} pgcli
+  ${BOLD}gf:${NONE} open guru focus (ex: ${BOLD}gf meli${NONE})
+  ${BOLD}yf:${NONE} open yahoo finance (ex: ${BOLD}yf baba${NONE})
+  ${BOLD}gl:${NONE} open google on firefox
+  ${BOLD}ff:${NONE} switch to firefox
+  ${BOLD}br:${NONE} open bull run (ex: ${BOLD}br itub3${NONE})
   ${BOLD}tw:${NONE} open twitter on brave
   ${BOLD}yt:${NONE} open youtube on brave
 "
+
+draw_flashcard

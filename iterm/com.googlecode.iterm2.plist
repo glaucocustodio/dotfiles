@@ -1064,7 +1064,7 @@
 				<key>action</key>
 				<string>editor</string>
 				<key>editor</key>
-				<string>com.sublimetext.4</string>
+				<string>com.microsoft.VSCode</string>
 				<key>text</key>
 				<string></string>
 			</dict>
@@ -1533,6 +1533,17 @@
 					<key>Text</key>
 					<string>f</string>
 				</dict>
+				<key>0xd-0x100000-0x24</key>
+				<dict>
+					<key>Action</key>
+					<integer>13</integer>
+					<key>Label</key>
+					<string></string>
+					<key>Text</key>
+					<string></string>
+					<key>Version</key>
+					<integer>1</integer>
+				</dict>
 				<key>0xf700-0x220000</key>
 				<dict>
 					<key>Action</key>
@@ -1806,6 +1817,15 @@
 				<real>0.21176470816135406</real>
 				<key>Red Component</key>
 				<real>0.027450980618596077</real>
+			</dict>
+			<key>Semantic History</key>
+			<dict>
+				<key>action</key>
+				<string>editor</string>
+				<key>editor</key>
+				<string>com.microsoft.VSCode</string>
+				<key>text</key>
+				<string></string>
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>

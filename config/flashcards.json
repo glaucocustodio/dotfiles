@@ -1872,7 +1872,7 @@
     "created_at": "23/10/2022, 14:01:12"
   },
   {
-    "front": "see off (we saw our friends off at the airport yestarday)",
+    "front": "see off (we saw our friends off at the airport yesterday)",
     "back": "despedir (nós despedimos de nossos amigos no aeroporto ontem)",
     "id": 391091525,
     "created_at": "23/10/2022, 14:01:12"
@@ -2407,7 +2407,7 @@
   },
   {
     "back": "contar algo a alguem para ouvir a opinião da pessoa (você me falaria sua idea uma vez mais?)",
-    "front": "run something by someone (would you run your idea by me one more time?)",
+    "front": "run [something] by [someone] (would you run your idea by me one more time?)",
     "created_at": "08/11/2022, 11:02:04",
     "id": 1667905324202
   },
@@ -2464,5 +2464,11 @@
     "back": "to make something more attractive or interesting (vamos adicionar fotos para deixar os dashboards mais atrativos)",
     "created_at": "30/01/2024, 17:54:54",
     "id": 1706637294103
+  },
+  {
+    "back": "rearrajar, organizar diferente (vamos rearranjar os times em breve)",
+    "front": "rejig (we gonna rejig the teams soon)",
+    "created_at": "09/02/2024, 18:20:10",
+    "id": 1707502810508
   }
 ]

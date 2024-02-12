@@ -40,3 +40,55 @@ function fetch_usd_brl_quote() {
   regularMarketPrice=$(echo $response | jq '.chart.result[0].meta.regularMarketPrice')
   echo "\nUSD/BRL: $regularMarketPrice"
 }
+
+function init_conda() {
+    __conda_setup="$('/Users/glauco/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/Users/glauco/miniconda3/etc/profile.d/conda.sh" ]; then
+            . "/Users/glauco/miniconda3/etc/profile.d/conda.sh"
+        else
+            export PATH="/Users/glauco/miniconda3/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
+}
+
+# allow removing many ips at once from ~/.ssh/known_hosts
+# eg: remove_ips_from_known_hosts 116.203.223.67 116.203.23.196 88.99.187.106
+function remove_ips_from_known_hosts() {
+  for ip in "$@"; do
+    ssh-keygen -R "$ip"
+  done
+}
+
+function draw_flashcard() {
+  # Path to the JSON file
+  json_file="${HOME}/.flashcards.json"
+
+  # Check if the JSON file exists
+  if [[ -f "${json_file}" ]]; then
+      # Fetch a random item from the array in the JSON file and print its 'front' attribute (limited to 100 characters)
+      flashcard_text=$(jq -r '.[] | .front' "${json_file}" | shuf -n 1 | cut -c 1-130)
+
+       # Determine the length of the message and add padding for the speech bubble
+      text_length=${#flashcard_text}
+      padding_length=5
+      # padded_text="$(printf '%*s' "$((text_length + padding_length))" "$flashcard_text")"
+      padded_text=$(printf '%*s' "$((padding_length))"; printf '%s' "$flashcard_text"; printf '%*s' "$((padding_length))")
+      bubble_inner_width=$((text_length + (2 * padding_length)))
+
+      # Create a string with the same number of dashes as the width of the bubble
+      bubble_top_bottom=$(printf '-%.0s' $(seq 1 $bubble_inner_width))
+      bubble_top=" /${bubble_top_bottom}\\"
+      bubble_bottom=" \\${bubble_top_bottom}/"
+
+      # Print the ASCII art speech bubble with the message
+      printf "${bubble_top}"
+      printf "\n |${padded_text}|\n"
+      printf "${bubble_bottom}\n\n"
+  else
+      echo "The flashcard file does not exist."
+  fi
+}
