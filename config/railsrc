@@ -1,0 +1,4 @@
+--skip-test
+--skip-jbuilder
+--database=postgresql
+--template=~/.rails_new_template.rb
