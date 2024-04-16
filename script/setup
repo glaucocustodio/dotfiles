@@ -19,26 +19,10 @@ git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/p
 # asdf plugin-add erlang
 # asdf plugin-add elixir
 
-echo "Setup configuration files..."
-
-config_files=~/Projects/dotfiles/config/*
-
-for file in $config_files; do
-  config=$(basename $file)
-  echo "Creating symlink for .$config"
-  ln -s $file ~/.$config
-done
-
-rm ~/.nvim
-mkdir -p ~/.config/nvim
-ln -s ~/Projects/dotfiles/config/nvim/init.vim ~/.config/nvim
-
-mkdir -p ~/.config/pgcli
-ln -s ~/.pgcli ~/.config/pgcli/config
+echo "Setting up dotfiles..."
 
 source ~/.macos
-
-cp ~/Projects/dotfiles/run_davinci.py ~/Library/Application\ Support/iTerm2/Scripts/run_davinci.py
+cd ~/dotfiles && make update
 
 echo "You might want to install: asdf, duti, pgcli.. Check README."
 echo "Done :)"

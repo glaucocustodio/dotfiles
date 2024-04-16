@@ -3,10 +3,11 @@
 Install the following programs before running this script:
 
 - iTerm2
+- stow (`brew install stow`)
 
 # Install
 
-First, clone this repository:
+First, clone this repository at `~/` (otherwise you might have issues with stow):
 
 ```bash
 cd ~/
@@ -21,10 +22,27 @@ chmod +x script/setup
 script/setup
 ```
 
+# Available make tasks
+
+Once you change a dotfile at `config/`, the changes will automatically be reflected at the respective file in `~/` (because of the sym link).
+
+If for some reason you wanna link the files again, run:
+
+```bash
+make update
+```
+
+To delete all dotfiles run:
+
+```bash
+make remove
+```
+
 # Other useful apps
 
 ## cross plataform
 
+- [stow](https://www.gnu.org/software/stow/manual/stow.html): program used to control dotfiles
 - https://github.com/asdf-vm/asdf: programming language version manager
 - https://github.com/federico-terzi/espanso: text expander
 - https://github.com/chmln/sd: like sed / awk, but friendlier
@@ -53,8 +71,10 @@ script/setup
 - https://github.com/ibraheemdev/modern-unix
 - https://www.manualdocodigo.com.br/vim-basico/: set up of Vim/NeoVim
 - https://tbaggery.com/2011/08/08/effortless-ctags-with-git.html
+- https://youtu.be/y6XCebnB9gs: using stow
+- https://systemcrafters.net/managing-your-dotfiles/using-gnu-stow/
 
-You might also want to add Sublime Merge to $PATH: `ln -s "/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge" /usr/local/bin/merge`
+~~You might also want to add Sublime Merge to $PATH: `ln -s "/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge" /usr/local/bin/merge`~~
 
 # Acknowledgment
 
