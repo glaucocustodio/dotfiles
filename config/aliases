@@ -25,6 +25,14 @@ alias v="nvim"
 alias llm="llm -m gpt-4-turbo"
 alias flushall-redis="echo flushall | redis-cli"
 
+unalias gca # remove zsh git alias
+
+# generate commit message with llm
+# https://gist.github.com/PedramNavid/d0d3cc4c2362143b3210a9f4a2a9c566
+alias gcl='git diff --minimal --cached | \
+    llm -t gitcommit > $(git rev-parse --git-dir)/COMMIT_EDITMSG && \
+    git commit --verbose --edit --file=$(git rev-parse --git-dir)/COMMIT_EDITMSG'
+
 # kill all ruby processes, except for ruby-lsp and standardrb ones (to avoid disturbing LSP)
 alias killruby="pgrep -fl '(ruby|puma)' | grep --invert-match ruby-lsp | grep --invert-match standardrb | grep --invert-match grep | awk '{print \$1}' | xargs kill -9"
 

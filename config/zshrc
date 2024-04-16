@@ -97,6 +97,16 @@ alias cfv="e $NEOVIM_CONFIG_FILE"
 
 . $(brew --prefix asdf)/libexec/asdf.sh
 
+# rust install with rustup, not asdf
+source "$HOME/.cargo/env"
+
+export PATH="/Users/glauco/.local/bin/:$PATH"
+
+# Spark requires Java
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
+export PATH="/Applications/Postgres.app/Contents/Versions/16/bin:$PATH"
+
 # display weather (short version)
 cli_short
 
