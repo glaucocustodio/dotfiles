@@ -2,7 +2,11 @@
 #
 # $ osascript -e 'id of app "Sublime Text"
 #
-# > com.sublimetext.4
+# > com.microsoft.VSCode
+#
+# $ osascript -e 'id of app "Visual Studio Code"'
+#
+# > com.microsoft.VSCode
 
 # to find the UTI of a file, run and check kMDItemContentType:
 #
@@ -39,22 +43,22 @@ duti -s org.videolan.vlc .mp2 all
 duti -s org.videolan.vlc .mpe all
 duti -s org.videolan.vlc .m4v all
 
-duti -s com.sublimetext.4 .mod all
-duti -s com.sublimetext.4 .dat all
-duti -s com.sublimetext.4 .run all
-duti -s com.sublimetext.4 .tex all
-duti -s com.sublimetext.4 .html all
-duti -s com.sublimetext.4 .json all
-duti -s com.sublimetext.4 .php all
-duti -s com.sublimetext.4 .md all
-duti -s com.sublimetext.4 .txt all
-duti -s com.sublimetext.4 .py all
-duti -s com.sublimetext.4 .sql all
-duti -s com.sublimetext.4 public.json all
-duti -s com.sublimetext.4 public.plain-text all
-duti -s com.sublimetext.4 public.text all
-duti -s com.sublimetext.4 public.xml all
-duti -s com.sublimetext.4 public.item all
-duti -s com.sublimetext.4 public.data all
-duti -s com.sublimetext.4 public.content all
-duti -s com.sublimetext.4 public.source-code all
+duti -s com.microsoft.VSCode .mod all
+duti -s com.microsoft.VSCode .dat all
+duti -s com.microsoft.VSCode .run all
+duti -s com.microsoft.VSCode .tex all
+duti -s com.microsoft.VSCode .html all
+duti -s com.microsoft.VSCode .json all
+duti -s com.microsoft.VSCode .php all
+duti -s com.microsoft.VSCode .md all
+duti -s com.microsoft.VSCode .txt all
+duti -s com.microsoft.VSCode .py all
+duti -s com.microsoft.VSCode .sql all
+duti -s com.microsoft.VSCode public.json all
+duti -s com.microsoft.VSCode public.plain-text all
+duti -s com.microsoft.VSCode public.text all
+duti -s com.microsoft.VSCode public.xml all
+duti -s com.microsoft.VSCode public.item all
+duti -s com.microsoft.VSCode public.data all
+duti -s com.microsoft.VSCode public.content all
+duti -s com.microsoft.VSCode public.source-code all
