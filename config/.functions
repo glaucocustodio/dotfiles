@@ -63,6 +63,36 @@ function remove_ips_from_known_hosts() {
   done
 }
 
+
+function extract() {
+  local OIFS="$IFS"
+  local IFS=$'\n'
+
+  for i in "$*"
+  do
+    [ ! -f "$i" ] || [ ! -r "$i" ] && echo "'$i' is not present or could not be read" && continue
+
+    case $i in
+      *.tar.bz2|*.tbz2) bzip2 -dc $i | tar xvf -    ;;
+      *.tar.gz|*.tgz)   gzip -dc $i  | tar xvf -    ;;
+      *.tar.xz) tar --xz xvf $i;;
+      *.bz2)     bzip2 -dc $i     ;;
+      *.rar)     rar x $i   ;;
+      *.gz)      gzip -d $i   ;;
+      *.tar)     tar xvf $i    ;;
+      *.zip)     unzip $i   ;;
+      *.Z)       uncompress $i  ;;
+      *.7z)      7z x $i  ;;
+      *.deb)     ar xv $i ;;
+      *.ztb)     unzip $i ;;
+      *.jar)     unzip $i ;;
+      *)         echo "'$i' cannot be extracted via extract()" ;;
+
+  esac
+  done
+}
+
+
 function draw_flashcard() {
   # Path to the JSON file
   json_file="${HOME}/.flashcards.json"

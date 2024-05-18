@@ -4,6 +4,7 @@
   ps = push
   pl = pull
   d  = diff
+  rs = restore --staged
   cm = commit -m
   cma = commit --amend -m
   dc = diff --cached

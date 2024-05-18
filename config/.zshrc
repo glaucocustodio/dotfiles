@@ -1,3 +1,5 @@
+clear
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -53,7 +55,8 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=10"
 # instead of rdbg (the default).
 export RUBY_DEBUG_IRB_CONSOLE=1
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 
 # enable file preview when searching files with fzf, need bat installed to have colored output
 # set following binds while fzf is open:
@@ -80,12 +83,12 @@ export FZF_DEFAULT_OPTS='
 # disable preview when searching history (CTRL+R)
 export FZF_CTRL_R_OPTS='--preview-window=:hidden'
 
+# trigger fzf when pressing arrow up (TOO SLOW FOR ME, DISABLED FOR NOW)
+# bindkey "${key[Up]}" fzf-history-widget
+
 # load zsh-autopair
 source ~/.zsh-autopair/autopair.zsh
 autopair-init
-
-# trigger fzf when pressing arrow up
-# bindkey "${key[Up]}" fzf-history-widget
 
 # NeoVim v0.7 binary must be present on this folder
 # NeoVim installed from brew is v0.5 (outdated), Telescope plugin requires NeoVim min v0.7
@@ -108,9 +111,10 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export PATH="/Applications/Postgres.app/Contents/Versions/16/bin:$PATH"
 
 # display weather (short version)
-cli_short
+# cli_short
 
-fetch_usd_brl_quote
+# request slow down load time
+# fetch_usd_brl_quote
 
 BOLD='\033[1m'
 NONE='\033[00m'
@@ -125,6 +129,7 @@ echo "
   ${BOLD}rg:${NONE} search file content (ignore files on .gitignore)
   ${BOLD}cal:${NONE} calendar
   ${BOLD}cli:${NONE} weather
+  ${BOLD}time zsh -i -c exit:${NONE} measure zsh startup time
   ${BOLD}flushdns:${NONE} flush dns
   ${BOLD}imgcat:${NONE} display image (ex: ${BOLD}imgcat foo.jpg${NONE})
   ${BOLD}using_port:${NONE} show processes using the given port. Ex: ${BOLD}using_port tcp:3000${NONE}
@@ -134,11 +139,12 @@ echo "
   ${BOLD}pc:${NONE} pgcli
   ${BOLD}gf:${NONE} open guru focus (ex: ${BOLD}gf meli${NONE})
   ${BOLD}yf:${NONE} open yahoo finance (ex: ${BOLD}yf baba${NONE})
-  ${BOLD}gl:${NONE} open google on firefox
-  ${BOLD}ff:${NONE} switch to firefox
   ${BOLD}br:${NONE} open bull run (ex: ${BOLD}br itub3${NONE})
-  ${BOLD}tw:${NONE} open twitter on brave
-  ${BOLD}yt:${NONE} open youtube on brave
+  ${BOLD}reload:${NONE} reload shell configuration
+  ${BOLD}git diff > changes.patch:${NONE} export changes to a patch file (that can be imported with ${BOLD}git apply changes.patch${NONE})
+  ${BOLD}git bisect:${NONE} powerful command used to find the specific commit that introduced a bug or regression in your codebase
+  ${BOLD}mkfile:${NONE} create a file and its parent directories if needed (ex: ${BOLD}mkfile foo/der/bar.txt${NONE})
+  ${BOLD}extract:${NONE} extract any file (rar, zip, gz etc) (ex: ${BOLD}extract file.zip${NONE})
 "
 
 draw_flashcard
