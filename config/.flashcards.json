@@ -528,7 +528,7 @@
     "created_at": "23/10/2022, 14:01:12"
   },
   {
-    "front": "rig (the results of the elections has been rigged)",
+    "front": "rig (the results of the elections have been rigged)",
     "back": "fraudar, manipular",
     "id": 176948303,
     "created_at": "23/10/2022, 14:01:12"
@@ -2484,7 +2484,7 @@
     "id": 1710174052860
   },
   {
-    "front": "nitty-gritty (we are going to get into some of the nitty-gitty engineering details)",
+    "front": "nitty-gritty (we are going to get into some of the nitty-gritty engineering details)",
     "back": "minucioso",
     "created_at": "23/03/2024, 21:48:45",
     "id": 1711230525764
@@ -2500,5 +2500,65 @@
     "back": "estradas vicinais / estradas rurais (geralmente de terra)",
     "created_at": "25/05/2024, 16:30:30",
     "id": 1716651030343
+  },
+  {
+    "front": "hit on (he was hitting on the girl)",
+    "back": "dar em cima (ele estava dando em cima da garota)",
+    "created_at": "02/06/2024, 17:33:41",
+    "id": 1717346021336
+  },
+  {
+    "front": "sidetrack (sorry we got sidetracked)",
+    "back": "desviar (desculpa, nós desviamos [o assunto])",
+    "created_at": "14/06/2024, 10:37:13",
+    "id": 1718357833672
+  },
+  {
+    "back": "presunçoso / convencido (adjetivo com conotação NEGATIVA)",
+    "front": "smug (the France team was very smug)",
+    "created_at": "11/07/2024, 13:43:32",
+    "id": 1720701812065
+  },
+  {
+    "back": "a partir de (desenvolvemos o plano a partir das diretrizes fornecidas)",
+    "front": "off the (we developed the plan off the provided guidelines)",
+    "created_at": "18/07/2024, 12:31:08",
+    "id": 1721302268352
+  },
+  {
+    "front": "piecemeal (the project is progressing in a slow, piecemeal manner)",
+    "back": "pouco a pouco",
+    "created_at": "19/07/2024, 21:34:42",
+    "id": 1721421282385
+  },
+  {
+    "front": "halve (Germany plans to halve military aid for Ukraine)",
+    "back": "cortar pela metade",
+    "created_at": "20/07/2024, 15:48:57",
+    "id": 1721486937499
+  },
+  {
+    "back": "temer / ter medo (eu estava com medo do voo longo de volta pra casa)",
+    "front": "dread (I was dreading the long flight back home)",
+    "created_at": "09/08/2024, 14:05:21",
+    "id": 1723208721654
+  },
+  {
+    "front": "day in and day out (he works tirelessly, day in and day out, to support his family)",
+    "back": "dia após dia",
+    "created_at": "09/08/2024, 19:21:49",
+    "id": 1723227709929
+  },
+  {
+    "front": "drip by drip, drip feeding",
+    "back": "gota a gota",
+    "created_at": "17/08/2024, 20:43:44",
+    "id": 1723923824454
+  },
+  {
+    "back": "transmitir (as cores no gráfico deven transmitir alguma lógica)",
+    "front": "convey (the colors in the chart should convey some logic)",
+    "created_at": "26/09/2024, 14:41:33",
+    "id": 1727358093125
   }
 ]

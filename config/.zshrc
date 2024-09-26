@@ -53,7 +53,11 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=10"
 # With the debug gem v1.9.0, which is part of Ruby 3.3,
 # you can configure it to use IRB as its console (by setting RUBY_DEBUG_IRB_CONSOLE=1)
 # instead of rdbg (the default).
-export RUBY_DEBUG_IRB_CONSOLE=1
+#
+# This is only necessary if using the debug gem (via: `debugger` or `binding.break`) to debug Ruby code.
+# As of Ruby 2.5 `binding.irb` is available, which is a simpler way to start a REPL from a breakpoint.
+#
+# export RUBY_DEBUG_IRB_CONSOLE=1
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)

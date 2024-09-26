@@ -36,3 +36,8 @@ end
 # IRB.conf[:USE_AUTOCOMPLETE] = false
 
 IRB.conf[:COMMAND_ALIASES][:w] = :whereami
+
+# https://github.com/ruby/irb/issues/992#issuecomment-2343517994
+IRB.conf[:COMMAND_ALIASES][:n] = :irb_next
+
+IRB.conf[:COMMAND_ALIASES][:c] = :continue
