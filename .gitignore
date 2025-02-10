@@ -1,2 +1,5 @@
 config/.private
+config/.config/pgcli/history
+config/.config/pgcli/log
 .DS_Store
+.bundle/

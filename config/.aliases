@@ -22,7 +22,6 @@ alias pc="pgcli"
 alias lsl="ls -lahtr"
 alias vim="nvim"
 alias v="nvim"
-alias llm="llm -m gpt-4o"
 alias reload="source ~/.zshrc"
 alias flushall-redis="echo flushall | redis-cli"
 

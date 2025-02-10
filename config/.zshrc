@@ -128,8 +128,9 @@ echo "
   ${GREEN}ALIASES${NONE}
 
   ${BOLD}e:${NONE} editor
-  ${BOLD}f:${NONE} search files with fzf (use ctrl+e to open selected file with vscode)
   ${BOLD}b:${NONE} bundle install -j$(nproc)
+  ${BOLD}f:${NONE} search files with fzf interactively (use ctrl+e to open selected file with vscode)
+  ${BOLD}fd:${NONE} find but faster and with better defaults (ignore files on .gitignore)
   ${BOLD}rg:${NONE} search file content (ignore files on .gitignore)
   ${BOLD}cal:${NONE} calendar
   ${BOLD}cli:${NONE} weather
@@ -149,6 +150,7 @@ echo "
   ${BOLD}git bisect:${NONE} powerful command used to find the specific commit that introduced a bug or regression in your codebase
   ${BOLD}mkfile:${NONE} create a file and its parent directories if needed (ex: ${BOLD}mkfile foo/der/bar.txt${NONE})
   ${BOLD}extract:${NONE} extract any file (rar, zip, gz etc) (ex: ${BOLD}extract file.zip${NONE})
+  ${BOLD}pbpaste:${NONE} paste from clipboard
 "
 
 draw_flashcard

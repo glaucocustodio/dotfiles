@@ -2560,5 +2560,71 @@
     "front": "convey (the colors in the chart should convey some logic)",
     "created_at": "26/09/2024, 14:41:33",
     "id": 1727358093125
+  },
+  {
+    "front": "sprinkle (I am going to sprinkle salt over the meat [verb] / a generous sprinkle of pepper [noun])",
+    "back": "polvilhar / dar uma pitada (de uma pitada de sal na carne)",
+    "created_at": "02/10/2024, 11:56:25",
+    "id": 1727866585480
+  },
+  {
+    "front": "predicament (James, you know my predicament)",
+    "back": "situação difícil (James, você sabe minha situação difícil)",
+    "created_at": "11/10/2024, 10:58:27",
+    "id": 1728640707280
+  },
+  {
+    "front": "fiddly (exporting reports to pptx might be fiddly)",
+    "back": "complicado (quando há muitas pequenas partes envolvidas)",
+    "created_at": "15/10/2024, 11:34:52",
+    "id": 1728988492615
+  },
+  {
+    "back": "encolher [fisicamente] / se sentir constrangido/evergonhado (eu me sinto constrangido toda vez que ouço uma dessas frases ridiculas) ",
+    "front": "to cringe (I cringe every time I hear one of these ridiculous statements)",
+    "created_at": "19/10/2024, 20:42:31",
+    "id": 1729366951991
+  },
+  {
+    "back": "quer (informal) [quer outro pedaço de bolo? / quer um pouco de café?]",
+    "front": "care for (care for another piece of cake? / care for some coffee)",
+    "created_at": "22/10/2024, 09:50:43",
+    "id": 1729587043823
+  },
+  {
+    "back": "incomodar (trouble or annoy (someone) with frequent or persistent requests or interruptions)",
+    "front": "pester (if you don’t know I’ll pester Marcelo)",
+    "created_at": "24/10/2024, 15:33:59",
+    "id": 1729780439823
+  },
+  {
+    "back": "esforçar ao máximo (eu decidi me esforçar ao máximo para melhorar minha fluencia em ingles nesse fim de ano)",
+    "front": "all out (I decided to go all out to improve my English fluency this end of the year)",
+    "created_at": "15/11/2024, 14:45:21",
+    "id": 1731681921171
+  },
+  {
+    "front": "jumble (the questions are jumbled up) [noun / verb]",
+    "back": "uma mistura de confusa de coisas [noun] / misturar coisas de maneira bagunçada [verb]",
+    "created_at": "06/01/2025, 11:43:28",
+    "id": 1736174608455
+  },
+  {
+    "front": "ahorrar (ahorre dinero con tales concelos)",
+    "back": "popuar (poupe dinheiro com tais conselhos)",
+    "created_at": "15/01/2025, 13:04:27",
+    "id": 1736946267861
+  },
+  {
+    "front": "fussy (it's ok with the cool & calm clients but with the fussy ones..)",
+    "back": "temperamental / dificil de agradar",
+    "created_at": "03/02/2025, 15:26:28",
+    "id": 1738596388715
+  },
+  {
+    "back": "chover bastante (está chovendo bastante aqui no momento)",
+    "front": "piss down (it's really pissing down here at the moment)",
+    "created_at": "10/02/2025, 11:11:09",
+    "id": 1739185869629
   }
 ]
