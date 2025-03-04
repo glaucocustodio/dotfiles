@@ -1,5 +1,7 @@
 config/.private
 config/.config/pgcli/history
 config/.config/pgcli/log
+config/.config/espanso/match/private.yml
+config/.config/espanso/match/.base.yml.swp
 .DS_Store
 .bundle/

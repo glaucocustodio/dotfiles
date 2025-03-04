@@ -1,0 +1,33 @@
+# `espanso edit public` to edit it
+matches:
+  - trigger: ":gf"
+    replace: "https://gurufocus.com/stock/$|$/summary"
+
+  - trigger: ":yf"
+    replace: "https://finance.yahoo.com/quote/$|$"
+
+  - trigger: ":gc"
+    replace: "glauco.custodio@gmail.com"
+
+  - trigger: ":tv"
+    replace: "https://br.tradingview.com/chart"
+
+  - trigger: ":ari"
+    replace: "ActiveRecord::Base.connection.indexes(Model.table_name)"
+
+  - trigger: ":saf"
+    replace: "select * from "
+
+  - trigger: ":scf"
+    replace: "select count(*) from"
+
+  - trigger: ":stf"
+    replace: ".show(truncate=False)"
+
+  - trigger: ":pg"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "openssl rand -base64 10 | pbcopy"

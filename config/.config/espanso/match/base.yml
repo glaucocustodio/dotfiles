@@ -1,0 +1,9 @@
+# For a complete introduction, visit the official docs at: https://espanso.org/docs/
+
+# Matches are substitution rules: when you type the "trigger" string
+# it gets replaced by the "replace" string.
+#
+# ⚠️ ===================== Use public.yml and private.yml instead ===================== ⚠️
+# `espanso edit public` and `espanso edit private`
+#
+matches:
