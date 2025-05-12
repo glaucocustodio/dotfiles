@@ -1,4 +1,5 @@
 --skip-test
 --skip-jbuilder
+--skip-rubocop
 --database=postgresql
 --template=~/.rails_new_template.rb

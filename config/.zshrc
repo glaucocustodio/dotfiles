@@ -39,7 +39,7 @@ export BUNDLE_JOBS=$(nproc)
 export DISABLE_SPRING=true
 
 export EDITOR=vim
-export BUNDLER_EDITOR=code
+export BUNDLER_EDITOR=cursor
 # prevent update whenever you run a brew command
 export HOMEBREW_NO_AUTO_UPDATE=1
 
@@ -74,7 +74,7 @@ source <(fzf --zsh)
 #
 export FZF_DEFAULT_OPTS='
   --bind "ctrl-y:execute-silent(echo {+} | pbcopy)"
-  --bind "ctrl-e:execute(echo {+} | xargs -o code)"
+  --bind "ctrl-e:execute(echo {+} | xargs -o $BUNDLER_EDITOR)"
    --preview "
   if file --mime-type {} | grep -qF image/; then
     imgcat --depth iterm2 --width $FZF_PREVIEW_COLUMNS --height $FZF_PREVIEW_LINES {}
@@ -102,7 +102,7 @@ export PATH="$HOME/nvim-macos/bin:$PATH"
 export NEOVIM_CONFIG_FILE="~/.config/nvim/init.vim"
 alias cfv="e $NEOVIM_CONFIG_FILE"
 
-. $(brew --prefix asdf)/libexec/asdf.sh
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 # rust install with rustup, not asdf
 source "$HOME/.cargo/env"
@@ -151,6 +151,9 @@ echo "
   ${BOLD}mkfile:${NONE} create a file and its parent directories if needed (ex: ${BOLD}mkfile foo/der/bar.txt${NONE})
   ${BOLD}extract:${NONE} extract any file (rar, zip, gz etc) (ex: ${BOLD}extract file.zip${NONE})
   ${BOLD}pbpaste:${NONE} paste from clipboard
+  ${BOLD}command + shift + .:${NONE} open iterm2 AI assistant, then you can ask for help, eg: list files
+  ${BOLD}command + y:${NONE} invokes AI assistant to translate type text to bash command
+  ${BOLD}shift + enter:${NONE} execute command suggested by the AI assistant
 "
 
 draw_flashcard

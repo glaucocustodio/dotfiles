@@ -2632,5 +2632,35 @@
     "back": "ser picuinha, encontrar falhas que não são importantes [verb] / picuinha, pequeno detalhe [noun]",
     "created_at": "24/02/2025, 16:09:04",
     "id": 1740413344750
+  },
+  {
+    "back": "se ao menos (se ao menos meu filhos me obedecessem / se ao menos meu marido me amasse mais)",
+    "front": "if only + verb (if only my children would obey me / if only my husband were more loving)",
+    "created_at": "02/04/2025, 14:35:46",
+    "id": 1743600946778
+  },
+  {
+    "front": "short handed (sorry asking this, I know you are short handed)",
+    "back": "com falta de pessoal (desculpa pedir isso, eu sei que voce está com falta de pessoal)",
+    "created_at": "28/04/2025, 11:18:33",
+    "id": 1745835513794
+  },
+  {
+    "back": "guarda-sol, de praia, de carro etc (o guarda-sol ajuda a reduzir a temperatura interior)",
+    "front": "sunshade (the sunshade helps reduce the interior temperature)",
+    "created_at": "28/04/2025, 11:20:48",
+    "id": 1745835648903
+  },
+  {
+    "front": "invaluable (Meric was invaluable to the company)",
+    "back": "inestimável, indispensável, extremamente util",
+    "created_at": "13/05/2025, 10:39:04",
+    "id": 1747129144189
+  },
+  {
+    "front": "chase up (I’m just chasing up with the team at The Loop today on the next steps)",
+    "back": "acompanhar, cobrar, relembrar (gentilmente)",
+    "created_at": "14/05/2025, 11:39:18",
+    "id": 1747219158328
   }
 ]

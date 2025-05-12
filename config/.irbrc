@@ -35,6 +35,7 @@ end
 # for more IRB conf options check https://docs.ruby-lang.org/en/master/IRB.html
 # IRB.conf[:USE_AUTOCOMPLETE] = false
 
+IRB.conf[:COMMAND_ALIASES] ||= {}
 IRB.conf[:COMMAND_ALIASES][:w] = :whereami
 
 # https://github.com/ruby/irb/issues/992#issuecomment-2343517994
