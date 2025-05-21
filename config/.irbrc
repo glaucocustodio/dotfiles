@@ -1,5 +1,7 @@
-# source: https://github.com/ruby/irb/issues/330#issuecomment-1132017233
-require "reline/ansi"
+unless defined?(Reline::ANSI::ANSI_CURSOR_KEY_BINDINGS)
+  # source: https://github.com/ruby/irb/issues/330#issuecomment-1132017233
+  require 'reline/ansi'
+end
 
 if defined?(Reline::ANSI::CAPNAME_KEY_BINDINGS) # make sure you're using an affected version
   # Fix insert, delete, pgup, and pgdown.
@@ -37,8 +39,8 @@ end
 
 IRB.conf[:COMMAND_ALIASES] ||= {}
 IRB.conf[:COMMAND_ALIASES][:w] = :whereami
-
 # https://github.com/ruby/irb/issues/992#issuecomment-2343517994
 IRB.conf[:COMMAND_ALIASES][:n] = :irb_next
-
 IRB.conf[:COMMAND_ALIASES][:c] = :continue
+IRB.conf[:COMMAND_ALIASES][:h] = :help
+IRB.conf[:COMMAND_ALIASES][:q] = :exit!

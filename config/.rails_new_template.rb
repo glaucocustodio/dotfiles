@@ -21,6 +21,9 @@ after_bundle do
   generate "rspec:install"
 
   file 'Makefile', MAKEFILE_CONTENT
+  create_file 'README.md', README_CONTENT, force: true
+  create_file 'config/initializers/database_cli.rb', DATABASE_CLI_CONTENT, force: true
+
   # replace 2 spaces at the start of lines with a tab (\t) in Makefile
   run "sed 's/^  */\t/' Makefile > tmp_file && mv tmp_file Makefile"
 
@@ -29,8 +32,7 @@ after_bundle do
   file '.rubocop.yml', RUBOCOP_CONFIG_CONTENT
   run "cp ~/.editorconfig .editorconfig"
 
-  remove_file '.rspec'
-  file '.rspec', RSPEC_CONFIG_CONTENT
+  create_file '.rspec', RSPEC_CONFIG_CONTENT, force: true
 
   add_prepared_statements_comment_to_database_yml
 
@@ -49,6 +51,11 @@ test:
 
 console:
   bin/rails console
+
+db_console:
+  bin/rails dbconsole
+
+dbconsole: db_console
 
 lint:
   bundle exec standardrb --format progress
@@ -76,6 +83,81 @@ CODE
 
 RSPEC_CONFIG_CONTENT = <<-CODE
 --require rails_helper
+CODE
+
+DATABASE_CLI_CONTENT = <<-CODE
+Rails.application.configure do
+  config.active_record.database_cli = {postgresql: "pgcli"} if Rails.env.local?
+end
+CODE
+
+README_CONTENT = <<-CODE
+# Project
+
+## Setup
+
+### Dependencies
+
+Ensure your system has installed: ([asdf](https://asdf-vm.com/guide/introduction.html) is recommended to manage versions):
+
+- Ruby (as per [.ruby-version](.ruby-version))
+- PostgreSQL (version 16+)
+
+### Installation
+
+Install gems:
+
+```bash
+bundle install
+```
+
+Prepare database:
+
+```bash
+bin/rails db:create db:migrate db:seed
+```
+
+## Running
+
+To run the application:
+
+```bash
+make run
+```
+
+To enter the console:
+
+```bash
+make console
+```
+
+To enter the database console (it requires [pgcli](https://www.pgcli.com/)):
+
+```bash
+make db_console
+```
+
+## Tests
+
+To run tests:
+
+```bash
+make test
+```
+
+## Formatting
+
+To check for lint/formatting issues:
+
+```bash
+make lint
+```
+
+To automatically fix the ones that can be fixed:
+
+```bash
+make lint_fix
+```
 CODE
 
 def add_prepared_statements_comment_to_database_yml
