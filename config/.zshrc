@@ -141,6 +141,7 @@ echo "
   ${BOLD}kill_all_in_port:${NONE} kill all processes using the given port. Ex: ${BOLD}kill_all_in_port tcp:3000${NONE}
   ${BOLD}killruby:${NONE} kill all ruby processes but solargraph
   ${BOLD}flushall-redis:${NONE} flush all redis storage
+  ${BOLD}myip:${NONE} show ip address
   ${BOLD}pc:${NONE} pgcli
   ${BOLD}gf:${NONE} open guru focus (ex: ${BOLD}gf meli${NONE})
   ${BOLD}yf:${NONE} open yahoo finance (ex: ${BOLD}yf baba${NONE})
