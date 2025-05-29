@@ -38,8 +38,8 @@ alias gcl='git diff --minimal --cached | \
     llm -t gitcommit > $(git rev-parse --git-dir)/COMMIT_EDITMSG && \
     git commit --verbose --edit --file=$(git rev-parse --git-dir)/COMMIT_EDITMSG'
 
-# kill all ruby processes, except for ruby-lsp and standardrb ones (to avoid disturbing LSP)
-alias killruby="pgrep -fl '(ruby|puma)' | grep --invert-match ruby-lsp | grep --invert-match standardrb | grep --invert-match grep | awk '{print \$1}' | xargs kill -9"
+# kill all ruby processes, except for ruby-lsp, standardrb, fuzzy-ruby, and grep ones (to avoid disturbing LSP)
+alias killruby='pgrep -fl "(ruby|puma)" | grep -vE "ruby-lsp|standardrb|grep|fuzzy-ruby" | cut -d " " -f1 | xargs -r kill -9'
 
 if [[ $OSTYPE == darwin* ]]; then
   alias brave="open -a /Applications/Brave\ Browser.app"

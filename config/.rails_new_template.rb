@@ -1,6 +1,10 @@
 # this file is triggered when `rails new` is run, check ~/.railsrc file
 #
 # see documentation at https://guides.rubyonrails.org/generators.html
+# https://adbatista.github.io/2025/05/25/templates.html
+
+# skip if generating a mountable engine with `rails plugin new foo --mountable` for example
+return if options["mountable"]
 
 gem "haml-rails"
 gem "dotenv"
@@ -92,7 +96,7 @@ end
 CODE
 
 README_CONTENT = <<-CODE
-# Project
+# #{app_name.humanize}
 
 ## Setup
 
