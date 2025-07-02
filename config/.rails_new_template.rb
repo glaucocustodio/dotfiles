@@ -3,173 +3,54 @@
 # see documentation at https://guides.rubyonrails.org/generators.html
 # https://adbatista.github.io/2025/05/25/templates.html
 
+$app_name = app_name
+
+require "~/rails_new_template/gems"
+require "~/rails_new_template/makefile"
+require "~/rails_new_template/readme"
+require "~/rails_new_template/database"
+require "~/rails_new_template/gitignore"
+require "~/rails_new_template/standard"
+require "~/rails_new_template/rubocop"
+require "~/rails_new_template/rspec"
+require "~/rails_new_template/factory_bot"
+require "~/rails_new_template/webmock"
+require "~/rails_new_template/stub_env"
+require "~/rails_new_template/request_helpers"
+
 # skip if generating a mountable engine with `rails plugin new foo --mountable` for example
 return if options["mountable"]
 
-gem "haml-rails"
-gem "dotenv"
-gem "faraday"
-
-gem_group :development, :test do
-  gem "amazing_print"
-  gem "faker"
-  gem "factory_bot_rails"
-  gem "pry-byebug"
-  gem "rspec-rails"
-  gem "standard"
-  gem "standard-rails"
-end
+install_gems(options)
 
 after_bundle do
   run "echo '############################# ℹ️  executing commands from .railsrc template #############################'"
   generate "rspec:install"
 
   file 'Makefile', MAKEFILE_CONTENT
+  replace_spaces_by_tab_in_makefile
+
   create_file 'README.md', README_CONTENT, force: true
   create_file 'config/initializers/database_cli.rb', DATABASE_CLI_CONTENT, force: true
 
-  # replace 2 spaces at the start of lines with a tab (\t) in Makefile
-  run "sed 's/^  */\t/' Makefile > tmp_file && mv tmp_file Makefile"
-
   append_to_file '.gitignore', GITIGNORE_CONTENT
+
   file '.standard.yml', STANDARD_CONFIG_CONTENT
   file '.rubocop.yml', RUBOCOP_CONFIG_CONTENT
   run "cp ~/.editorconfig .editorconfig"
 
-  create_file '.rspec', RSPEC_CONFIG_CONTENT, force: true
+  add_prepared_statements_to_database_yml
 
-  add_prepared_statements_comment_to_database_yml
+  create_file '.rspec', RSPEC_CONFIG_CONTENT, force: true
+  create_file 'spec/support/factory_bot.rb', FACTORY_BOT_CONFIG_CONTENT
+  create_file 'spec/support/stub_env.rb', STUB_ENV_CONFIG_CONTENT
+  create_file 'spec/support/request_helpers.rb', REQUEST_HELPERS_CONTENT
+  prepend_to_file 'spec/spec_helper.rb', WEBMOCK_CONFIG_CONTENT
+  uncomment_lines 'spec/rails_helper.rb', /Rails\.root\.glob\(.*support.*\.rb.*require f/
+  add_aggregate_failures_to_spec_helper
 
   rails_command("db:create")
 
   git add: "."
   git commit: "-a -m 'create project'"
-end
-
-MAKEFILE_CONTENT = <<-CODE
-run:
-  bin/rails server
-
-test:
-  bundle exec rspec
-
-console:
-  bin/rails console
-
-db_console:
-  bin/rails dbconsole
-
-dbconsole: db_console
-
-lint:
-  bundle exec standardrb --format progress
-
-lint_fix:
-  bundle exec standardrb --fix --format progress
-CODE
-
-GITIGNORE_CONTENT = <<-CODE
-.tags*
-CODE
-
-STANDARD_CONFIG_CONTENT = <<-CODE
----
-plugins:
-  - standard-rails
-CODE
-
-RUBOCOP_CONFIG_CONTENT = <<-CODE
-# disable all cops by default so editors only show errors from standard
-AllCops:
-  DisabledByDefault: true
-  SuggestExtensions: false
-CODE
-
-RSPEC_CONFIG_CONTENT = <<-CODE
---require rails_helper
-CODE
-
-DATABASE_CLI_CONTENT = <<-CODE
-Rails.application.configure do
-  config.active_record.database_cli = {postgresql: "pgcli"} if Rails.env.local?
-end
-CODE
-
-README_CONTENT = <<-CODE
-# #{app_name.humanize}
-
-## Setup
-
-### Dependencies
-
-Ensure your system has installed: ([asdf](https://asdf-vm.com/guide/introduction.html) is recommended to manage versions):
-
-- Ruby (as per [.ruby-version](.ruby-version))
-- PostgreSQL (version 16+)
-
-### Installation
-
-Install gems:
-
-```bash
-bundle install
-```
-
-Prepare database:
-
-```bash
-bin/rails db:create db:migrate db:seed
-```
-
-## Running
-
-To run the application:
-
-```bash
-make run
-```
-
-To enter the console:
-
-```bash
-make console
-```
-
-To enter the database console (it requires [pgcli](https://www.pgcli.com/)):
-
-```bash
-make db_console
-```
-
-## Tests
-
-To run tests:
-
-```bash
-make test
-```
-
-## Formatting
-
-To check for lint/formatting issues:
-
-```bash
-make lint
-```
-
-To automatically fix the ones that can be fixed:
-
-```bash
-make lint_fix
-```
-CODE
-
-def add_prepared_statements_comment_to_database_yml
-  system(%q{
-    file="config/database.yml"
-    comment="# prepared_statements: false to simplify debugging"
-    if ! grep -Fxq "$comment" "$file"; then
-      { echo "$comment"; cat "$file"; } > "$file.tmp" && mv "$file.tmp" "$file"
-    fi
-  })
 end
