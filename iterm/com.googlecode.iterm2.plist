@@ -1250,7 +1250,7 @@ The script should do this: \(ai.prompt)</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>JetBrainsMonoNerdFontCompleteM-Regular 20</string>
+			<string>Menlo-Regular 18</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1350,6 +1350,10 @@ The script should do this: \(ai.prompt)</string>
 			<string>/Users/glauco</string>
 		</dict>
 	</array>
+	<key>OpenArrangementAtStartup</key>
+	<false/>
+	<key>OpenNoWindowsAtStartup</key>
+	<false/>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
 	<key>PMPrintingPanelSize</key>

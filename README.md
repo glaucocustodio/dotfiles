@@ -4,6 +4,8 @@ Install the following programs before running this script:
 
 - iTerm2
 - stow (`brew install stow`)
+- coreutils (`brew install coreutils`)
+- ctags (`brew install ctags`)
 
 # Install
 
@@ -56,6 +58,7 @@ make remove
 
 ## macOS only
 
+- [shortcuts for window management/tiling (introduced in macOS Sequoia 15)](https://support.apple.com/en-hk/guide/mac-help/mchl9674d0b0/mac)
 - ~~https://github.com/moretension/duti: to set default apps via cli (brew install duti)~~ - does not seem to work
 - https://github.com/dbcli/pgcli: pgcli better than psql (brew install pgcli)
 - ~~https://github.com/Lord-Kamina/SwiftDefaultApps: to set default app~~
