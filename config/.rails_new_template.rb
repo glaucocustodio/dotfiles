@@ -5,18 +5,18 @@
 
 $app_name = app_name
 
-require "~/rails_new_template/gems"
-require "~/rails_new_template/makefile"
-require "~/rails_new_template/readme"
-require "~/rails_new_template/database"
-require "~/rails_new_template/gitignore"
-require "~/rails_new_template/standard"
-require "~/rails_new_template/rubocop"
-require "~/rails_new_template/rspec"
-require "~/rails_new_template/factory_bot"
-require "~/rails_new_template/webmock"
-require "~/rails_new_template/stub_env"
-require "~/rails_new_template/request_helpers"
+require "~/.rails_new_template/gems"
+require "~/.rails_new_template/makefile"
+require "~/.rails_new_template/readme"
+require "~/.rails_new_template/database"
+require "~/.rails_new_template/gitignore"
+require "~/.rails_new_template/standard"
+require "~/.rails_new_template/rubocop"
+require "~/.rails_new_template/rspec"
+require "~/.rails_new_template/factory_bot"
+require "~/.rails_new_template/webmock"
+require "~/.rails_new_template/stub_env"
+require "~/.rails_new_template/request_helpers"
 
 # skip if generating a mountable engine with `rails plugin new foo --mountable` for example
 return if options["mountable"]
