@@ -23,5 +23,7 @@ echo "Setting up dotfiles..."
 source ~/.macos
 cd ~/dotfiles && make update
 
-echo "You might want to install: asdf, duti, pgcli.. Check README."
+echo "Installing brew packages..."
+brew bundle --file=script/Brewfile
+
 echo "Done :)"

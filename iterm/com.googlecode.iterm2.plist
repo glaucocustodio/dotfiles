@@ -843,6 +843,8 @@ The script should do this: \(ai.prompt)</string>
 		<dict>
 			<key>ASCII Anti Aliased</key>
 			<true/>
+			<key>ASCII Ligatures</key>
+			<false/>
 			<key>Ambiguous Double Width</key>
 			<false/>
 			<key>Ansi 0 Color</key>
@@ -1085,6 +1087,8 @@ The script should do this: \(ai.prompt)</string>
 			</dict>
 			<key>Blend</key>
 			<real>0.46919446113782054</real>
+			<key>Blink Allowed</key>
+			<false/>
 			<key>Blinking Cursor</key>
 			<false/>
 			<key>Blur</key>
@@ -1226,6 +1230,8 @@ The script should do this: \(ai.prompt)</string>
 					<integer>1</integer>
 				</dict>
 			</dict>
+			<key>Left Option Key Changeable</key>
+			<false/>
 			<key>Link Color</key>
 			<dict>
 				<key>Alpha Component</key>

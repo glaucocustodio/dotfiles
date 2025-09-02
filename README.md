@@ -58,14 +58,16 @@ make remove
 
 ## macOS only
 
-- [shortcuts for window management/tiling (introduced in macOS Sequoia 15)](https://support.apple.com/en-hk/guide/mac-help/mchl9674d0b0/mac)
+- https://rectangleapp.com/ works better [~~shortcuts for window management/tiling (introduced in macOS Sequoia 15)~~](https://support.apple.com/en-hk/guide/mac-help/mchl9674d0b0/mac)
 - ~~https://github.com/moretension/duti: to set default apps via cli (brew install duti)~~ - does not seem to work
 - https://github.com/dbcli/pgcli: pgcli better than psql (brew install pgcli)
 - ~~https://github.com/Lord-Kamina/SwiftDefaultApps: to set default app~~
 - https://github.com/ArtemGordinsky/Spotifree: spotify ad muter
 - https://apps.apple.com/us/app/brightness-slider/id456624497?mt=12: external monitor brightness control
 - ~~https://apps.apple.com/us/app/record-it-screen-recorder/id1339001002?mt=12: screen recorder~~ (can use QuickTime instead)
-- https://maccy.app/: clipboard manager
+- https://maccy.app/: clipboard manager (free to install via brew)
+- https://postgresapp.com/: Postgres version managament tool
+- https://dbngin.com/: all-in-one database version management tool (allow many versions of Postgres, Redis, MySQL etc)
 - https://www.mowglii.com/itsycal/: better calendar
 - https://apps.apple.com/us/app/ethernet-status/id1186187538: ethernet cable status indicator
 

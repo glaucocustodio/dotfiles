@@ -19,12 +19,17 @@ alias c="make console"
 alias mt="make test"
 alias cdsp="cd \"$HOME/Library/Application Support/Sublime Text/Packages/User\""
 alias pc="pgcli"
-alias lsl="ls -lahtr"
+alias ls="ls --color=auto -F"
+# alias ls="eza -a --sort newest -F"
+# alias lsl="ls -lahtr"
+alias lsl="eza --header -l -a --sort newest -F"
+alias l="lsl"
 alias myip="curl ipinfo.io"
 alias vim="nvim"
 alias v="nvim"
 alias reload="source ~/.zshrc"
 alias flushall-redis="echo flushall | redis-cli"
+alias migrate="bundle exec rails db:migrate"
 
 # create a file and its parent directories if needed
 # usagee `mkfile foo/bar/der.txt`

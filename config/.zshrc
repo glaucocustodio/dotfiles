@@ -114,6 +114,27 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 export PATH="/Applications/Postgres.app/Contents/Versions/16/bin:$PATH"
 
+# Dracula theme for eza (maintained fork of exa, improved ls) (https://draculatheme.com/eza#installation)
+#
+# ==> I have changed `da` from `2;34` to `1;34` to make it more readable on dark mode (default is `2;34`)
+export EZA_COLORS="\
+uu=36:\
+uR=31:\
+un=35:\
+gu=37:\
+da=1;34:\
+ur=34:\
+uw=95:\
+ux=36:\
+ue=36:\
+gr=34:\
+gw=35:\
+gx=36:\
+tr=34:\
+tw=35:\
+tx=36:\
+xx=95:"
+
 # display weather (short version)
 # cli_short
 
