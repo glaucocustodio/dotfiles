@@ -17,10 +17,10 @@ plugins=(
   colored-man-pages
 )
 
-source $ZSH/oh-my-zsh.sh
-
 # This will check for updates every x days
 zstyle ':omz:update' frequency 60
+
+source $ZSH/oh-my-zsh.sh
 
 # load aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
@@ -40,6 +40,7 @@ export DISABLE_SPRING=true
 
 export EDITOR=vim
 export BUNDLER_EDITOR=cursor
+export RAILS_EDITOR=$BUNDLER_EDITOR # rails 8.1+ (https://github.com/rails/rails/pull/55295)
 # prevent update whenever you run a brew command
 export HOMEBREW_NO_AUTO_UPDATE=1
 

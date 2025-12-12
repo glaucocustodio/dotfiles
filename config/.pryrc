@@ -9,7 +9,7 @@
 #   gem 'pry-rescue' # Start a pry session whenever something goes wrong.
 # end
 
-Pry.config.editor = 'subl'
+Pry.config.editor = 'cursor'
 
 # == Pry-Nav ==
 Pry.config.commands.alias_command 'c', 'continue' rescue nil

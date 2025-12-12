@@ -25,11 +25,12 @@ alias ls="ls --color=auto -F"
 alias lsl="eza --header -l -a --sort newest -F"
 alias l="lsl"
 alias myip="curl ipinfo.io"
-alias vim="nvim"
-alias v="nvim"
+# alias vim="nvim"
+# alias v="nvim"
 alias reload="source ~/.zshrc"
 alias flushall-redis="echo flushall | redis-cli"
 alias migrate="bundle exec rails db:migrate"
+alias rollback="bundle exec rails db:rollback"
 
 # create a file and its parent directories if needed
 # usagee `mkfile foo/bar/der.txt`

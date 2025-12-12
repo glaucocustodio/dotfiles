@@ -1,6 +1,6 @@
-ruby 3.3.4
+ruby 3.1.2
 python 3.8.9
-nodejs 18.4.0
+nodejs 22.18.0
 erlang 23.0.3
 golang 1.16.5
 rust 1.66.1
