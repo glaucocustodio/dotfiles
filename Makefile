@@ -1,3 +1,6 @@
+force_update:
+	stow config --override='.zshrc' --verbose=2
+
 update:
 	stow config --verbose=2
 

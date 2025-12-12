@@ -21,7 +21,7 @@ git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/p
 echo "Setting up dotfiles..."
 
 source ~/.macos
-cd ~/dotfiles && make update
+cd ~/dotfiles && make force_update
 
 echo "Installing brew packages..."
 brew bundle --file=script/Brewfile

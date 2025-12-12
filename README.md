@@ -4,8 +4,6 @@ Install the following programs before running this script:
 
 - iTerm2
 - stow (`brew install stow`)
-- coreutils (`brew install coreutils`)
-- ctags (`brew install ctags`)
 
 # Install
 
@@ -31,7 +29,7 @@ Once you change a dotfile at `config/`, the changes will automatically be reflec
 If for some reason you wanna link the files again, run:
 
 ```bash
-make update
+make force_update
 ```
 
 To delete all dotfiles run:

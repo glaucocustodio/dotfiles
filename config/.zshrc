@@ -103,10 +103,10 @@ export PATH="$HOME/nvim-macos/bin:$PATH"
 export NEOVIM_CONFIG_FILE="~/.config/nvim/init.vim"
 alias cfv="e $NEOVIM_CONFIG_FILE"
 
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+#export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 # rust install with rustup, not asdf
-source "$HOME/.cargo/env"
+# source "$HOME/.cargo/env"
 
 export PATH="/Users/glauco/.local/bin/:$PATH"
 
@@ -114,6 +114,8 @@ export PATH="/Users/glauco/.local/bin/:$PATH"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 export PATH="/Applications/Postgres.app/Contents/Versions/16/bin:$PATH"
+
+eval "$(mise activate zsh)"
 
 # Dracula theme for eza (maintained fork of exa, improved ls) (https://draculatheme.com/eza#installation)
 #
