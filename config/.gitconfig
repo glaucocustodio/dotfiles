@@ -28,8 +28,8 @@
   editor = /usr/bin/vim
   # https://tekin.co.uk/2020/10/better-git-diff-output-for-ruby-python-elixir-and-more
   attributesFile = ~/.gitattributes
-  # enable mouse scroll on git diff
-	pager = less -+$LESS -RS
+  # improve mouse scroll on git diff
+	pager = less -+$LESS -R --chop-long-lines
 # not in use
 # [color "diff-highlight"]
 #   oldNormal="red bold"

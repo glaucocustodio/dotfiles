@@ -44,6 +44,7 @@ make remove
 
 - [stow](https://www.gnu.org/software/stow/manual/stow.html): program used to control dotfiles
 - https://github.com/asdf-vm/asdf: programming language version manager
+- https://www.npmjs.com/package/ezff: plain english to ffmpeg command
 - https://github.com/federico-terzi/espanso: text expander
 - https://github.com/chmln/sd: like sed / awk, but friendlier
 - https://github.com/eddieantonio/imgcat: display image on terminal
@@ -78,6 +79,12 @@ make remove
 - https://systemcrafters.net/managing-your-dotfiles/using-gnu-stow/
 
 ~~You might also want to add Sublime Merge to $PATH: `ln -s "/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge" /usr/local/bin/merge`~~
+
+On recent versions of macOS you might need to enable notifications on Slack:
+
+- open "System Settings"
+- look for "Notifications"
+- click on "Slack" then toggle on "Allow notifications"
 
 # Acknowledgment
 

@@ -16,6 +16,7 @@ cask 'brave-browser'
 cask 'firefox@developer-edition'
 cask 'iterm2'
 cask 'cursor'
+cask 'slack'
 cask 'visual-studio-code'
 # image preview for fzf (override imgcat that comes with iTerm2):
 tap 'eddieantonio/eddieantonio'
