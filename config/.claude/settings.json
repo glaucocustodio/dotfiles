@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(* --version)",
+      "Bash(* --help *)",
+      "Bash(bin/rspec *)",
+      "Bash(bundle exec rspec *)",
+      "Bash(bundle exec rubocop --autocorrect *)",
+      "Bash(bin/rubocop -A *)",
+      "Bash(make lint)",
+      "Bash(make lint_fix)",
+      "Bash(git log *)",
+      "Bash(git add *)",
+      "Bash(git show *)",
+      "Bash(npm info *)",
+      "Bash(gh pr list *)",
+      "Bash(gh pr view *)",
+      "Bash(gh pr create *)",
+      "Bash(gh pr comment *)",
+      "Bash(gh pr review *)",
+      "Bash(gh pr review request *)",
+      "Bash(gh pr review request remove *)",
+      "Bash(bin/rails db:migrate *)",
+      "Bash(bin/rails db:rollback *)",
+      "Read(~/.claude/*)",
+      "Write(db/migrate/*)"
+    ]
+  },
+  "enabledPlugins": {
+    "ruby-lsp@claude-plugins-official": true,
+    "github@claude-plugins-official": true
+  },
+  "skipAutoPermissionPrompt": true
+}

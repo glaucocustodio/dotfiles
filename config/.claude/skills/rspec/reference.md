@@ -1140,7 +1140,7 @@ Before considering tests complete:
 - [ ] Used `describe` with full action style (`"#show"`) for request specs (NOT `"GET /:id"`)
 - [ ] Used `context "when ..."`
 - [ ] Used `described_class` instead of class name
-- [ ] Do not use `let`/`let!` and `before` constructs
+- [ ] **NEVER** use `let`/`let!` and `before` constructs
 - [ ] Blank lines between arrange/act/assert (if not obvious)
 - [ ] No `_double` suffix on test doubles
 - [ ] **All doubles use `instance_double(ClassName)`** — never bare `double()`

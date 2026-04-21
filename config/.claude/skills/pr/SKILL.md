@@ -8,7 +8,11 @@ permissions:
     - gh
 ---
 
-Push the current branch to remote and open a PR on GitHub.
+First verify if a PR already exists for the current branch (or for the branch to be created - in case the user is on branch `master`/`main`).
+
+If the PR exists, check if its description is up to date with latest changes.
+
+If the PR does not exist, push the current branch to remote and open a PR on GitHub.
 
 If user is on branch `master`/`main`, show a error message instead.
 
