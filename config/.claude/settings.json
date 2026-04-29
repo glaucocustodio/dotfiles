@@ -5,8 +5,8 @@
       "Bash(* --help *)",
       "Bash(bin/rspec *)",
       "Bash(bundle exec rspec *)",
-      "Bash(bundle exec rubocop --autocorrect *)",
-      "Bash(bin/rubocop -A *)",
+      "Bash(bundle exec rubocop *)",
+      "Bash(bin/rubocop *)",
       "Bash(make lint)",
       "Bash(make lint_fix)",
       "Bash(git log *)",
@@ -20,9 +20,10 @@
       "Bash(gh pr review *)",
       "Bash(gh pr review request *)",
       "Bash(gh pr review request remove *)",
+      "Bash(gh search *)",
       "Bash(bin/rails db:migrate *)",
       "Bash(bin/rails db:rollback *)",
-      "Read(~/.claude/*)",
+      "Read(/Users/glauco/.claude/**)",
       "Write(db/migrate/*)"
     ]
   },

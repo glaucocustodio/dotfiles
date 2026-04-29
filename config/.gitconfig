@@ -1,6 +1,5 @@
 [alias]
   st = status
-  co = checkout
   ps = push
   pl = pull
   d  = diff
@@ -14,6 +13,26 @@
   sh = show HEAD
   sho = show
   force = push --force-with-lease
+  # checkout branch with fzf
+  #
+  # usage:
+  #
+  # $ git co <branch> (switch to branch immediately)
+  # $ git co (use fzf to select branch, previewing last 20 commits and opening last commit details with ctrl+o)
+  #
+  co = "!f() { \
+    if [ -n \"$1\" ]; then \
+      git checkout \"$@\"; \
+    else \
+      branch=$(git for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads refs/remotes | grep -v HEAD | \
+        fzf --ansi \
+            --preview 'git log --oneline --graph --decorate --color=always {} | head -20' \
+            --preview-window=right:60% \
+            --bind \"ctrl-o:execute(git show --color=always {} | less -R)+ignore\" \
+      ); \
+      [ -n \"$branch\" ] && git checkout \"$branch\"; \
+    fi; \
+  }; f"
 [color]
   ui = true
 [user]

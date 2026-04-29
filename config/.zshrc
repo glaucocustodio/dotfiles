@@ -51,6 +51,13 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 # from zsh-autosuggestions
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=10"
 
+# History settings
+export HISTFILE=~/.zsh_history
+export HISTSIZE=50000
+export SAVEHIST=50000
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY
+
 # With the debug gem v1.9.0, which is part of Ruby 3.3,
 # you can configure it to use IRB as its console (by setting RUBY_DEBUG_IRB_CONSOLE=1)
 # instead of rdbg (the default).
@@ -116,6 +123,7 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export PATH="/Applications/Postgres.app/Contents/Versions/16/bin:$PATH"
 
 eval "$(mise activate zsh)"
+eval "$(zoxide init zsh)"
 
 # Dracula theme for eza (maintained fork of exa, improved ls) (https://draculatheme.com/eza#installation)
 #
@@ -151,11 +159,14 @@ GREEN='\033[01;32m'
 echo "
   ${GREEN}ALIASES${NONE}
 
+  ${BOLD}a:${NONE} AI assistant (Claude)
   ${BOLD}e:${NONE} editor
   ${BOLD}b:${NONE} bundle install -j$(nproc)
   ${BOLD}f:${NONE} search files with fzf interactively (use ctrl+e to open selected file with vscode)
+  ${BOLD}catf:${NONE} cat file with fzf
   ${BOLD}fd:${NONE} find but faster and with better defaults (ignore files on .gitignore)
   ${BOLD}rg:${NONE} search file content (ignore files on .gitignore)
+  ${BOLD}zi:${NONE} search/navigate to recently visited directories with zoxide
   ${BOLD}cal:${NONE} calendar
   ${BOLD}cli:${NONE} weather
   ${BOLD}time zsh -i -c exit:${NONE} measure zsh startup time
@@ -169,16 +180,12 @@ echo "
   ${BOLD}pc:${NONE} pgcli
   ${BOLD}gf:${NONE} open guru focus (ex: ${BOLD}gf meli${NONE})
   ${BOLD}yf:${NONE} open yahoo finance (ex: ${BOLD}yf baba${NONE})
-  ${BOLD}br:${NONE} open bull run (ex: ${BOLD}br itub3${NONE})
   ${BOLD}reload:${NONE} reload shell configuration
   ${BOLD}git diff > changes.patch:${NONE} export changes to a patch file (that can be imported with ${BOLD}git apply changes.patch${NONE})
   ${BOLD}git bisect:${NONE} powerful command used to find the specific commit that introduced a bug or regression in your codebase
   ${BOLD}mkfile:${NONE} create a file and its parent directories if needed (ex: ${BOLD}mkfile foo/der/bar.txt${NONE})
   ${BOLD}extract:${NONE} extract any file (rar, zip, gz etc) (ex: ${BOLD}extract file.zip${NONE})
   ${BOLD}pbpaste:${NONE} paste from clipboard
-  ${BOLD}command + shift + .:${NONE} open iterm2 AI assistant, then you can ask for help, eg: list files
-  ${BOLD}command + y:${NONE} invokes AI assistant to translate type text to bash command
-  ${BOLD}shift + enter:${NONE} execute command suggested by the AI assistant
 "
 
 draw_flashcard

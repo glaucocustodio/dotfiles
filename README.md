@@ -69,6 +69,7 @@ make remove
 - https://dbngin.com/: all-in-one database version management tool (allow many versions of Postgres, Redis, MySQL etc)
 - https://www.mowglii.com/itsycal/: better calendar
 - https://apps.apple.com/us/app/ethernet-status/id1186187538: ethernet cable status indicator
+- https://apps.apple.com/br/app/caffeinebar/id6756945754: keep mac awake
 
 ## Useful
 
