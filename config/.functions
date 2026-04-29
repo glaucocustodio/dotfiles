@@ -55,6 +55,13 @@ function remove_ips_from_known_hosts() {
   done
 }
 
+function cat() {
+  if [ $# -eq 0 ]; then
+    bat --style header-filename,grid --theme=TwoDark "$(fzf)"
+  else
+    bat -p --theme=TwoDark "$@"
+  fi
+}
 
 function extract() {
   local OIFS="$IFS"

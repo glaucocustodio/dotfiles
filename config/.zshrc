@@ -163,7 +163,6 @@ echo "
   ${BOLD}e:${NONE} editor
   ${BOLD}b:${NONE} bundle install -j$(nproc)
   ${BOLD}f:${NONE} search files with fzf interactively (use ctrl+e to open selected file with vscode)
-  ${BOLD}catf:${NONE} cat file with fzf
   ${BOLD}fd:${NONE} find but faster and with better defaults (ignore files on .gitignore)
   ${BOLD}rg:${NONE} search file content (ignore files on .gitignore)
   ${BOLD}zi:${NONE} search/navigate to recently visited directories with zoxide
