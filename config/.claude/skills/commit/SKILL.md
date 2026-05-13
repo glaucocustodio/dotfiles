@@ -4,8 +4,6 @@ description: ALWAYS use this skill when committing code changes — never commit
 invoke: when committing with git
 ---
 
-**ALWAYS** use `printf` to create commit description (to avoid terminal color codes)
-
 Create a git commit describing the current changes/new files.
 
 If the user asks to amend, you should amend last git commit with new changes. Update the commit description accordingly so it takes all changes in consideration.

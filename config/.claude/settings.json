@@ -6,6 +6,7 @@
       "Bash(bin/rspec *)",
       "Bash(bundle exec rspec *)",
       "Bash(bundle exec rubocop *)",
+      "Bash(mise exec -- bin/rubocop *)",
       "Bash(bin/rubocop *)",
       "Bash(make lint)",
       "Bash(make lint_fix)",

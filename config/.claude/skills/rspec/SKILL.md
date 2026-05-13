@@ -4,7 +4,7 @@ description: Write RSpec tests for Ruby code
 invoke: when writing or modifying RSpec test files
 ---
 
-Write RSpec tests for the code the user requested.
+Always use this skill when writing/changing RSpec tests.
 
 When implementing this skill:
 

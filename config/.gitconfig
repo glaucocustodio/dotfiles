@@ -13,6 +13,7 @@
   sh = show HEAD
   sho = show
   force = push --force-with-lease
+  undo = reset HEAD~1 --soft
   # checkout branch with fzf
   #
   # usage:
