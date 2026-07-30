@@ -54,6 +54,8 @@ make test
 
 ## Formatting
 
+This project uses [standard](https://github.com/standardrb/standard) for a minimal coding style.
+
 To check for lint/formatting issues:
 
 ```bash

@@ -34,6 +34,14 @@ alias flushall-redis="echo flushall | redis-cli"
 alias migrate="bundle exec rails db:migrate"
 alias rollback="bundle exec rails db:rollback"
 
+# Suffix aliases
+#
+# ex: just typing `README.md` prints the file content with `bat`
+#
+alias -s {md,text,html,haml,rb,css,js,py,json,yml,lock,sh}="bat --style header-filename,grid --theme=TwoDark"
+alias -s {png,jpg,jpeg,svg}='imgcat'
+
+
 # create a file and its parent directories if needed
 # usagee `mkfile foo/bar/der.txt`
 alias mkfile='mkdir_file() { mkdir -p "$(dirname "$1")" && touch "$1"; }; mkdir_file'
@@ -58,6 +66,3 @@ if [[ $OSTYPE == darwin* ]]; then
   # macOs 10.11+
   alias flushdns='sudo killall -HUP mDNSResponder'
 fi
-
-# ========== Suffix Alias ==========
-alias -s {png,jpg,jpeg}='imgcat'
