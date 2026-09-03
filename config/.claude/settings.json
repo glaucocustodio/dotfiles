@@ -28,9 +28,18 @@
       "Write(db/migrate/*)"
     ]
   },
+  "model": "opus[1m]",
   "enabledPlugins": {
     "ruby-lsp@claude-plugins-official": true,
     "github@claude-plugins-official": true
   },
-  "skipAutoPermissionPrompt": true
+  "effortLevel": "high",
+  "voice": {
+    "enabled": true,
+    "mode": "hold"
+  },
+  "theme": "dark",
+  "skipAutoPermissionPrompt": true,
+  "voiceEnabled": true,
+  "tui": "fullscreen"
 }

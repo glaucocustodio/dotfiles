@@ -4,9 +4,10 @@ description: Review code changes to ensure nothing breaks (no regression has bee
 invoke: when user asks for reviewing/QA changes
 ---
 
-Review changes on this branch and try to find a case where it would break.
-
-Suggest automated tests whenever possible.
+- Review changes on this branch and try to find a case where it would break.
+- Suggest automated tests whenever possible.
+- Check for any missing table indexes/constraints in recently added migrations
+- Suggest removal of unused project dependencies
 
 Rank items by this order:
 

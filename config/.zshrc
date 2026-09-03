@@ -39,7 +39,7 @@ export BUNDLE_JOBS=$(nproc)
 export DISABLE_SPRING=true
 
 export EDITOR=vim
-export BUNDLER_EDITOR=cursor
+export BUNDLER_EDITOR=code
 export RAILS_EDITOR=$BUNDLER_EDITOR # rails 8.1+ (https://github.com/rails/rails/pull/55295)
 # prevent update whenever you run a brew command
 export HOMEBREW_NO_AUTO_UPDATE=1
