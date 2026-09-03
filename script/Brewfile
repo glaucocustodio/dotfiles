@@ -10,6 +10,7 @@ brew 'redis', restart_service: :changed
 brew 'stow'
 brew 'ripgrep'
 brew 'eza'
+brew 'tmux'
 brew 'zoxide'
 cask 'maccy'
 cask 'rectangle'
