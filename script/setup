@@ -7,21 +7,21 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 echo "Installing oh-my-zsh"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+RUNZSH=no CHSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 git clone https://github.com/hlissner/zsh-autopair ~/.zsh-autopair
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
+git clone https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+git clone https://github.com/Aloxaf/fzf-tab "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fzf-tab"
 
-# echo "Installing asdf..."
-# git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.6.2
-# asdf plugin-add erlang
-# asdf plugin-add elixir
+echo "Setting up macOS..."
+source ~/.macos
+
+echo "Installing Mise..."
+curl https://mise.run | sh
 
 echo "Setting up dotfiles..."
-
-source ~/.macos
-cd ~/dotfiles && make force_update
+rm ~/.zshrc
+cd ~/dotfiles && make update
 
 echo "Installing brew packages..."
 brew bundle --file=script/Brewfile

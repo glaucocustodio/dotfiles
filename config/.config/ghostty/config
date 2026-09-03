@@ -1,0 +1,171 @@
+# ============================================================
+# Ghostty configuration
+# ============================================================
+
+# ------------------------------------------------------------
+# Font
+# ------------------------------------------------------------
+
+# Font family. Ghostty uses the system-installed font.
+# Examples: JetBrains Mono, Fira Code, SF Mono, Iosevka
+font-family = JetBrains Mono
+
+# Font size in points
+font-size = 17
+
+# Enable font ligatures
+# font-feature = +liga
+# font-feature = +calt
+
+
+# ------------------------------------------------------------
+# Window
+# ------------------------------------------------------------
+
+# Window padding in pixels
+window-padding-x = 10
+window-padding-y = 8
+
+# Don't show the titlebar
+#macos-titlebar-style = native
+macos-titlebar-style = tabs
+
+# Start maximized
+maximize = true
+
+# Window opacity (0.0 - 1.0)
+# background-opacity = 0.95
+
+# Blur transparent backgrounds
+# background-blur-radius = 20
+
+
+# ------------------------------------------------------------
+# Theme / Colors
+# ------------------------------------------------------------
+
+# Use a built-in theme
+# theme = catppuccin-mocha
+# theme = Solarized Dark Patched
+theme = Spacegray
+
+# Or use separate themes depending on system appearance
+# theme = light:catppuccin-latte,dark:catppuccin-mocha
+
+# Background opacity
+# background-opacity = 1.0
+
+
+# ------------------------------------------------------------
+# Cursor
+# ------------------------------------------------------------
+
+# Cursor style: block, bar, or underline
+cursor-style = block
+
+# Cursor blinking
+cursor-style-blink = true
+
+
+# ------------------------------------------------------------
+# Shell
+# ------------------------------------------------------------
+
+# Ghostty normally detects your default shell automatically.
+# Explicitly setting it is usually unnecessary.
+
+# command = /bin/zsh
+
+# Keep shell open after the command exits
+# quit-after-last-window = false
+
+
+# ------------------------------------------------------------
+# Scrollback
+# ------------------------------------------------------------
+
+# Number of lines kept in scrollback
+scrollback-limit = 10000
+
+# Scroll multiplier
+# mouse-scroll-multiplier = 1
+
+
+# ------------------------------------------------------------
+# Clipboard
+# ------------------------------------------------------------
+
+# Copy selected text automatically
+copy-on-select = true
+
+# Paste protection
+# confirm-paste = true
+
+
+# ------------------------------------------------------------
+# macOS
+# ------------------------------------------------------------
+
+# Hide the application from the dock when all windows are closed
+# macos-auto-secure-input = true
+
+# Use macOS Option key as Alt/Meta
+# macos-option-as-alt = true
+
+# Hide the window when Ghostty loses focus
+# macos-quick-terminal-animation-duration = 0.15
+
+
+# ------------------------------------------------------------
+# Keybindings
+# ------------------------------------------------------------
+
+# Navigate tabs
+keybind = cmd+left=previous_tab
+keybind = cmd+right=next_tab
+
+# Reorder tabs
+keybind = cmd+shift+left=move_tab:-1
+keybind = cmd+shift+right=move_tab:+1
+
+# Split terminal vertically
+keybind = cmd+d=new_split:right
+
+# Split terminal horizontally
+keybind = cmd+shift+d=new_split:down
+
+# Close current split
+keybind = cmd+w=close_surface
+
+# Navigate splits
+keybind = cmd+alt+left=goto_split:left
+keybind = cmd+alt+right=goto_split:right
+keybind = cmd+alt+up=goto_split:up
+keybind = cmd+alt+down=goto_split:down
+
+# Increase / decrease font size
+keybind = cmd+plus=increase_font_size:1
+keybind = cmd+minus=decrease_font_size:1
+keybind = cmd+0=reset_font_size
+
+
+# ------------------------------------------------------------
+# Performance
+# ------------------------------------------------------------
+
+# Sync terminal rendering to the display refresh rate
+# window-vsync = true
+
+
+# ------------------------------------------------------------
+# Misc
+# ------------------------------------------------------------
+
+# Disable audible bell
+# bell-features = disable
+
+# Automatically hide mouse while typing
+mouse-hide-while-typing = true
+
+# Shell integration
+shell-integration = detect

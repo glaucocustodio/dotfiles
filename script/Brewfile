@@ -1,5 +1,5 @@
 brew 'libyaml' # required to compile ruby
-brew 'asdf'
+# brew 'asdf'
 brew 'bat'
 brew 'coreutils'
 brew 'ctags'
