@@ -69,6 +69,7 @@ defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 # Trackpad: enable tap to click for this user and for the login screen
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
@@ -150,6 +151,10 @@ defaults write com.apple.assistant.support.plist "Assistant Enabled" -bool false
 # - Unchecked
 defaults write com.apple.Siri StatusMenuVisible -bool false
 
+# ========== Mouse ==========
+# tracking speed
+defaults write -g com.apple.mouse.scaling -float 3.0
+
 # ========== Others ==========
 
 # Sublime Text 3
@@ -163,4 +168,7 @@ defaults write com.apple.Siri StatusMenuVisible -bool false
 #
 defaults write com.apple.LaunchServices/com.apple.launchservices.secure LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.4;}'
 
-echo "Please restart your macOS so all changes can take effect."
+# Apply settings immediately
+/System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+
+echo "You might need to restart your macOS so all changes can take effect."

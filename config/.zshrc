@@ -106,11 +106,12 @@ autopair-init
 # NeoVim installed from brew is v0.5 (outdated), Telescope plugin requires NeoVim min v0.7
 # follow instructions from https://github.com/neovim/neovim/releases/tag/v0.7.2
 # then add to the $PATH
-export PATH="$HOME/nvim-macos/bin:$PATH"
-export NEOVIM_CONFIG_FILE="~/.config/nvim/init.vim"
-alias cfv="e $NEOVIM_CONFIG_FILE"
+# export PATH="$HOME/nvim-macos/bin:$PATH"
+# export NEOVIM_CONFIG_FILE="~/.config/nvim/init.vim"
+# alias cfv="e $NEOVIM_CONFIG_FILE"
 
-#export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+# if using ASDF
+# export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 # rust install with rustup, not asdf
 # source "$HOME/.cargo/env"
@@ -118,7 +119,7 @@ alias cfv="e $NEOVIM_CONFIG_FILE"
 export PATH="/Users/glauco/.local/bin/:$PATH"
 
 # Spark requires Java
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+# export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 export PATH="/Applications/Postgres.app/Contents/Versions/16/bin:$PATH"
 

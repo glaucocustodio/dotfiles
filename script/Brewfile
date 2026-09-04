@@ -13,6 +13,8 @@ brew 'eza'
 brew 'tmux'
 brew 'zoxide'
 cask 'maccy'
+cask 'spotify'
+cask 'monitorcontrol' # use native brightness control keys to control external displays brightness
 cask 'rectangle'
 cask 'brave-browser'
 cask 'firefox@developer-edition'

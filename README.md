@@ -2,7 +2,6 @@
 
 Install the following programs before running this script:
 
-- iTerm2
 - stow (`brew install stow`)
 
 # Install
@@ -62,7 +61,7 @@ make remove
 - https://github.com/dbcli/pgcli: pgcli better than psql (brew install pgcli)
 - ~~https://github.com/Lord-Kamina/SwiftDefaultApps: to set default app~~
 - https://github.com/ArtemGordinsky/Spotifree: spotify ad muter
-- https://apps.apple.com/us/app/brightness-slider/id456624497?mt=12: external monitor brightness control
+- ~~https://apps.apple.com/us/app/brightness-slider/id456624497?mt=12: external monitor brightness control~~ (`brew install --cask monitorcontrol` instead)
 - ~~https://apps.apple.com/us/app/record-it-screen-recorder/id1339001002?mt=12: screen recorder~~ (can use QuickTime instead)
 - https://maccy.app/: clipboard manager (free to install via brew)
 - https://postgresapp.com/: Postgres version managament tool
