@@ -55,8 +55,26 @@ function remove_ips_from_known_hosts() {
   done
 }
 
+# Pretty `cat` via bat, with an interactive fzf file picker when called bare.
+#
+# The `-t 1` guard is load-bearing, for two reasons:
+#
+#   1. Piping. Without it, `cat foo.json | jq .` feeds jq bat's formatted
+#      output instead of the raw bytes.
+#   2. Zero-arg calls from non-interactive shells. `echo hi | cat` and
+#      `cat <<'EOF' ... EOF` both pass $# -eq 0, so they'd fall into the fzf
+#      branch and block forever waiting on a selection nobody can make (fzf
+#      opens /dev/tty directly, so even redirecting stdin doesn't save you).
+#      Tools that shell out are what actually hit this: Claude Code snapshots
+#      every function defined here and sources it into each command it runs
+#      (it strips aliases but keeps functions), so a hung `cat` shows up there
+#      as a command timeout.
+#
+# So: bat only when stdout is a terminal, real /bin/cat everywhere else.
 function cat() {
-  if [ $# -eq 0 ]; then
+  if [ ! -t 1 ]; then
+    command cat "$@"
+  elif [ $# -eq 0 ]; then
     bat --style header-filename,grid --theme=TwoDark "$(fzf)"
   else
     bat -p --theme=TwoDark "$@"
