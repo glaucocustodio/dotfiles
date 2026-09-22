@@ -110,7 +110,7 @@ copy-on-select = clipboard
 # macos-auto-secure-input = true
 
 # Use macOS Option key as Alt/Meta
-# macos-option-as-alt = true
+macos-option-as-alt = true
 
 # Hide the window when Ghostty loses focus
 # macos-quick-terminal-animation-duration = 0.15

@@ -14,7 +14,9 @@ alias cdd="cd ~/Downloads"
 alias dow="cd ~/Downloads"
 alias cd="z" # zoxide alias - `zi` command is also part of zoxide, it shows recently visited directories
 alias cdp="cd ~/Projects"
+alias cde="cd ~/Projects/easyship"
 alias a="claude"
+alias ac="claude --continue" # continue last session
 alias c="make console"
 alias r="make run"
 alias mt="make test"
@@ -38,7 +40,7 @@ alias rollback="bundle exec rails db:rollback"
 #
 # ex: just typing `README.md` prints the file content with `bat`
 #
-alias -s {md,text,html,haml,rb,css,js,py,json,yml,lock,sh}="bat --style header-filename,grid --theme=TwoDark"
+alias -s {md,text,html,haml,rb,css,js,py,json,yml,lock}="bat --style header-filename,grid --theme=TwoDark"
 alias -s {png,jpg,jpeg,svg}='imgcat'
 
 

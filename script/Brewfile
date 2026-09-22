@@ -3,11 +3,13 @@ brew 'libyaml' # required to compile ruby
 brew 'bat'
 brew 'coreutils'
 brew 'ctags'
+brew 'gh' # github cli
 brew 'jq'
 brew 'fzf'
 brew 'pgcli'
 brew 'redis', restart_service: :changed
 brew 'stow'
+brew 'yarn'
 brew 'ripgrep'
 brew 'eza'
 brew 'tmux'

@@ -31,7 +31,8 @@
   "model": "opus[1m]",
   "enabledPlugins": {
     "ruby-lsp@claude-plugins-official": true,
-    "github@claude-plugins-official": true
+    "github@claude-plugins-official": true,
+    "shopify-ai-toolkit@claude-plugins-official": true
   },
   "effortLevel": "high",
   "tui": "fullscreen",
