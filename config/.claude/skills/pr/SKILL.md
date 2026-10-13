@@ -9,9 +9,9 @@ permissions:
 ---
 
 **NEVER** use ANSI escape codes for terminal colors or any other special codes, PR description should be plain text
-**NEVER** push force to branch `master`/`main`
+**NEVER** push force to branch `master`/`main`/`develop`
 
-First verify if a PR already exists for the current branch (or for the branch to be created - in case the user is on branch `master`/`main`).
+First verify if a PR already exists for the current branch (or for the branch to be created - in case the user is on branch `master`/`main`/`develop`).
 
 If the PR exists, check if its description is up to date with latest changes.
 
@@ -26,4 +26,3 @@ If there is only one commit on the branch, use the first line of the commit mess
 When referencing code methods or symbols wrap them with ``. Eg: `polaris_select` and `polaris_collection_check_boxes` uses `object&.public_send`, which only short-circuits on `nil` and therefore raised `NoMethodError`
 
 You can use the `gh` CLI for creating a PR on GitHub.
-

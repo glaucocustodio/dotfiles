@@ -13,6 +13,8 @@ Ignore unstaged db/schema.rb changes. Do not ask if they should be committed.
 Never include  ANSI escape codes for terminal colors or any other special codes, the commit message must be plain text only.
 
 - Refer to `examples.md` for concrete examples
+- If the repository carries its own commit-convention doc (`CONTRIBUTION.md`, `CONTRIBUTING.md` or
+  equivalent), read it and let it win over the defaults below
 
 ## Prerequisites
 Before committing, always check the current branch:
@@ -21,14 +23,16 @@ Before committing, always check the current branch:
 git branch --show-current
 ```
 
-**If you're on `main` or `master`, you MUST create a feature branch first** — unless the user explicitly asked to commit to main. Do not ask the user whether to create a branch; just proceed with branch creation.
+**If you're on `main`, `master` or `develop`, you MUST create a feature branch first** — unless the user explicitly asked to commit on current branch. Do not ask the user whether to create a branch; just proceed with branch creation.
 
 ## Branch name
 When creating a branch, follow:
 
-- keep branch name short, maximum 40 chars long
-- branch name should summarize the changes
-- dash separated, eg: `refresh-ui-upon-rating`
+- When a Jira ticket ID is known, use `<type>/<JIRA-ID>-<short-summary>`, eg:
+  `feat/CORE-2691-block-bulgaria-signups`. The type is the same set as the commit type. This is
+  also where the commit scope gets read back from, so it is worth getting right.
+- Otherwise keep the branch name short, maximum 40 chars long, dash separated, and summarizing the
+  changes, eg: `refresh-ui-upon-rating`
 
 ## Format
 
@@ -44,12 +48,51 @@ Commit message must follow this format:
 
 ### Subject Line Rules
 
-- Phrase the message using clear business language so it is friendly to understand for people who are not technical
-- Need to be understandable by anyone in the business
-- Use imperative, present tense: "Add feature" not "Added feature"
-- Capitalize the first letter
-- No period at the end
-- Maximum 70 characters
+The subject is a [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) header:
+
+```
+<type>(<JIRA-ID>): <short summary>
+```
+
+- **Type** — exactly one of `build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test|hotfix`.
+  Always lowercase.
+- **Scope** — the Jira ticket ID. Infer it in this order:
+  1. the current branch name (`feat/CORE-2691-block-bulgaria-signups` -> `CORE-2691`)
+  2. the recent conversation context
+  3. if no ticket can be found, fall back to a short feature-name scope (`specs`, `i18n`, `admin`)
+     rather than blocking or inventing an ID
+  Normalize the ticket ID to uppercase.
+- **Summary** — imperative, present tense ("add feature" not "added feature"), **first letter NOT
+  capitalized**, no period at the end.
+- Phrase the summary using clear business language so it is friendly to understand for people who
+  are not technical. It needs to be understandable by anyone in the business.
+- **Never type the `(#NNNN)` PR-number suffix.** GitHub appends it automatically on squash merge.
+- Target 72 characters or fewer, never exceed 100, not counting the auto-appended `(#NNNN)`.
+
+Examples:
+
+```
+feat(CORE-2691): block new Bulgaria signups on the dashboard
+fix(COUR-3958): use item origin country for SF Express SourceArea field
+chore(specs): remove the flaky courier rate timeout spec
+```
+
+### Breaking Changes
+
+Add `!` between the type and the scope, and explain the migration path in a `BREAKING CHANGE:`
+footer:
+
+```
+feat!(CORE-2691): drop legacy rate response fields
+
+BREAKING CHANGE: `total_charge` is gone from /api/v1/rates; read
+`total_charge_amount` instead.
+```
+
+Caveat: `CONTRIBUTION.md` is self-contradictory here — its prose says to put `!` before the colon
+(`feat(CORE-2691)!:`, the spec-standard position) while its example shows `feat!(CORE-2691):`. Use
+the example form above. No commit in recent history uses `!` at all, so if the PR title check
+rejects it, drop the `!` and rely on the `BREAKING CHANGE:` footer alone.
 
 ## Body Guidelines
 
@@ -59,11 +102,20 @@ Commit message must follow this format:
 - Include motivation for the change
 - Contrast with previous behavior when relevant
 - Use real newlines in commit bodies; never include literal `\n` sequences
-- Maximum 230 characters
+- **No line may exceed 100 characters.** Hard-wrap onto a new line before hitting
+  the limit — never let a bullet or paragraph run past it. Indent the continuation
+  of a bullet by two spaces so it lines up under the text of the bullet it belongs to.
+- Maximum 230 characters in total, counting all lines
 
 ## Footer
-- Reference issue and/or Notion page: Fixes #123, Notion: https://www.notion.so/company-org/page-on-notion
+- The Jira ticket already lives in the subject scope, so a footer link is usually redundant and
+  most commits have none. Add one only when the linked page carries context beyond the ticket ID,
+  eg: `Refs: https://easyship-team.atlassian.net/browse/CORE-2691`
+- Include a `BREAKING CHANGE:` paragraph when the change is breaking (see above)
 - Include AI attribution when necessary
+- **No line may exceed 100 characters here either.** Wrap `BREAKING CHANGE:` prose onto further
+  lines. The two exceptions are a long URL and a `Co-Authored-By:` trailer: never break those,
+  since wrapping them stops them working.
 
 ### AI-Generated Changes
 
