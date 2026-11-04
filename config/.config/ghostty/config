@@ -84,11 +84,8 @@ cursor-style-blink = true
 # Scrollback
 # ------------------------------------------------------------
 
-# Number of lines kept in scrollback
-scrollback-limit = 10000
-
 # Scroll multiplier
-# mouse-scroll-multiplier = 1
+mouse-scroll-multiplier = discrete:1
 
 
 # ------------------------------------------------------------

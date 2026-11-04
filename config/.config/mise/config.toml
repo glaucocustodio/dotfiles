@@ -1,7 +1,5 @@
 [settings]
-# allow reading version from .ruby-version and similar files
-# more info at https://mise.jdx.dev/configuration.html#idiomatic-version-files
-idiomatic_version_file_enable_tools = ["ruby"]
+idiomatic_version_file_enable_tools = ["ruby", "node"]
 
 [settings.python]
 compile = true
