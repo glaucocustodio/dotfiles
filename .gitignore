@@ -3,5 +3,12 @@ config/.config/pgcli/history
 config/.config/pgcli/log
 config/.config/espanso/match/private.yml
 config/.config/espanso/match/.base.yml.swp
+config/.claude/skills/synced
+config/.config/gcloud
+config/.claude/skills/.trash
+config/.config/1Password
+config/.config/gh
+config/.config/raycast
+config/.config/ponytail
 .DS_Store
 .bundle/

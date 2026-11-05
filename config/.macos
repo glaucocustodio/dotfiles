@@ -96,6 +96,9 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 12
 # Tab: \U21e5 (Unicode code point for ⇥ character)
 defaults write -globalDomain NSUserKeyEquivalents -dict-add "Zoom" "@\$m";
 
+# Disable the ⌘F5 / fn⌘F5 shortcut that toggles VoiceOver (symbolic hotkey 59)
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 59 "<dict><key>enabled</key><false/></dict>"
+
 ###############################################################################
 # Finder                                                                      #
 ###############################################################################
