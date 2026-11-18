@@ -73,6 +73,7 @@
     "cmd-left": "tab.prev",
     "cmd-right": "tab.next",
     "cmd-backspace": "send:\u0015",
+    "cmd-k": "send:\f",
     "cmd-shift-left": "mod.open:tab-move-left",
     "cmd-shift-right": "mod.open:tab-move-right"
   }
