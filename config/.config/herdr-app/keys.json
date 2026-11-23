@@ -74,6 +74,8 @@
     "cmd-right": "tab.next",
     "cmd-backspace": "send:\u0015",
     "cmd-k": "send:\f",
+    "cmd-pageup": {"command": "terminal.scroll", "args": {"pages": -1}},
+    "cmd-pagedown": {"command": "terminal.scroll", "args": {"pages": 1}},
     "cmd-shift-left": "mod.open:tab-move-left",
     "cmd-shift-right": "mod.open:tab-move-right"
   }
